@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="alternate"
+      type="application/rss+xml"
+      href="https://ragone.io/rss.xml"
+      title="RSS feed for https://ragone.io/"/>
+<title>Hello world!</title>
+<meta  name="author" content="ragone" />
+      <link href= "static/style.css" rel="stylesheet" type="text/css" />
+      <link href= "static/htmlize.css" rel="stylesheet" type="text/css" />
+      <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
+      <meta name="viewport" content="initial-scale=1,width=device-width,minimum-scale=1"></head>
+<body>
+<div id="preamble" class="status">
+<div class="header">
+        <a href="https://ragone.io">Alex Ragone - Web Developer</a>
+      </div></div>
+<div id="content">
+<div class="headline"> <h1 class="post-title"><a href="htmlize.html">Hello world!</a></h1>
+<div class="taglist">:<a href="https://ragone.io/tag-website.html">website</a>:</div></div><div class="post-date"><2019-05-21></div><div class="org-src-container">
+<pre class="src src-php"><span class="org-php-keyword">public</span> <span class="org-php-keyword">function</span> <span class="org-php-function-name">test</span>() {
+    <span class="org-php-variable-sigil">$</span><span class="org-php-variable-name">test</span> = <span class="org-php-string">"test"</span>;
+}
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(<span class="org-keyword">defun</span> <span class="org-function-name">org-style-tags</span> (post-filename<span class="org-parinfer-pretty-parensXdim-paren">)</span>
+  (<span class="org-keyword">let</span> ((taglist-content <span class="org-string">""</span><span class="org-parinfer-pretty-parensXdim-paren">))</span>
+    (<span class="org-keyword">when</span> (<span class="org-keyword">and</span> (<span class="org-function-name">org-static-blog-get-tags</span> post-filename) <span class="org-variable-name">org-static-blog-enable-tags</span><span class="org-parinfer-pretty-parensXdim-paren">)</span>
+      (<span class="org-keyword">setq</span> taglist-content (<span class="org-constant">concat</span> <span class="org-string">"&lt;div class=\"taglist\"&gt;"</span>
+                                    <span class="org-string">":"</span><span class="org-parinfer-pretty-parensXdim-paren">))</span>
+      (<span class="org-keyword">dolist</span> (tag (<span class="org-function-name">org-static-blog-get-tags</span> post-filename<span class="org-parinfer-pretty-parensXdim-paren">))</span>
+        (<span class="org-keyword">setq</span> taglist-content (<span class="org-constant">concat</span> taglist-content <span class="org-string">"&lt;a href=\""</span>
+                                      <span class="org-variable-name">org-static-blog-publish-url</span>
+                                      <span class="org-string">"tag-"</span> (<span class="org-constant">downcase</span> tag) <span class="org-string">".html"</span>
+                                      <span class="org-string">"\"&gt;"</span> tag <span class="org-string">"&lt;/a&gt;:"</span><span class="org-parinfer-pretty-parensXdim-paren">)))</span>
+      (<span class="org-keyword">setq</span> taglist-content (<span class="org-constant">concat</span> taglist-content <span class="org-string">"&lt;/div&gt;"</span><span class="org-parinfer-pretty-parensXdim-paren">)))</span>
+    taglist-content<span class="org-parinfer-pretty-parensXdim-paren">))</span>
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-rust"><span class="org-keyword">fn</span> <span class="org-function-name">test</span> () {
+    <span class="org-keyword">let</span> <span class="org-variable-name">test</span> = <span class="org-type">Vector</span>::new();
+}
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-shell">
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-clojure">
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-javascript">
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-sh">
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-bash">
+</pre>
+</div>
+</div>
+<div id="postamble" class="status"><div id="archive">
+        <a href="archive.html">archive</a>
+      </div>
+      <center>
+        <p>Find me on <a title="LinkedIn" href="https://www.linkedin.com/in/alex-ragone" target="_blank" rel="noopener">LinkedIn</a> or <a title="Github" href="https://github.com/ragone" target="_blank" rel="noopener">Github</a>!</p>
+      </center></div>
+</body>
+</html>
