@@ -1,4 +1,4 @@
-#+TITLE: deft-or-close
+#+TITLE: deft-or-close.el
 #+DATE: <2019-05-11 Sat>
 #+FILETAGS: emacs snippets
 
