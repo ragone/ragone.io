@@ -1,0 +1,32 @@
+#+TITLE: htmlize.el
+#+DATE: <2019-05-23 Thu>
+#+FILETAGS: emacs snippets
+
+Quickly copy a htmlized buffer or region to the clipboard.
+#+BEGIN_SRC emacs-lisp
+(defun ragone-htmlize ()
+  "Convert the htmlized region to an image and copy to clipboard."
+  (interactive)
+  (let ((htmlize-pre-style t)
+        (region-background (face-attribute 'region :background))
+        (start (if (region-active-p)
+                   (region-beginning) (point-min)))
+        (end (if (region-active-p)
+                 (region-end) (point-max))))
+    (set-face-background 'region "unspecified")
+    (unwind-protect
+      (ragone-htmlize-to-clipboard
+       (htmlize-region-for-paste start end))
+      (set-face-background 'region region-background))))
+
+(defun ragone-htmlize-to-clipboard (html)
+  "Copy HTML to clipboard."
+  (with-temp-buffer
+    (insert html)
+    (call-shell-region
+     (point-min) (point-max)
+     "wkhtmltoimage -f png - - | xclip -i -selection clipboard -t image/png")))
+#+END_SRC
+
+#+RESULTS:
+: ragone-htmlize-to-clipboard

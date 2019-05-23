@@ -6,7 +6,7 @@
       type="application/rss+xml"
       href="https://ragone.io/rss.xml"
       title="RSS feed for https://ragone.io/"/>
-<title>Hello world!</title>
+<title>htmlize.el</title>
 <meta  name="author" content="ragone" />
       <link href= "static/style.css" rel="stylesheet" type="text/css" />
       <link href= "static/htmlize.css" rel="stylesheet" type="text/css" />
@@ -18,59 +18,33 @@
         <a href="https://ragone.io">Alex Ragone - Web Developer</a>
       </div></div>
 <div id="content">
-<div class="headline"> <h1 class="post-title"><a href="htmlize.html">Hello world!</a></h1>
-<div class="taglist">:<a href="https://ragone.io/tag-website.html">website</a>:</div></div><div class="org-src-container">
-<pre class="src src-php"><span class="org-php-keyword">public</span> <span class="org-php-keyword">function</span> <span class="org-php-function-name">test</span>() {
-    <span class="org-php-variable-sigil">$</span><span class="org-php-variable-name">test</span> = <span class="org-php-string">"test"</span>;
-}
-</pre>
-</div>
-
+<div class="headline"> <h1 class="post-title"><a href="htmlize.html">htmlize.el</a></h1>
+<div class="taglist">:<a href="https://ragone.io/tag-emacs.html">emacs</a>:<a href="https://ragone.io/tag-snippets.html">snippets</a>:</div></div><p>
+Quickly copy a htmlized buffer or region to the clipboard.
+</p>
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">(<span class="org-keyword">defun</span> <span class="org-function-name">org-style-tags</span> (post-filename<span class="org-parinfer-pretty-parensXdim-paren">)</span>
-  (<span class="org-keyword">let</span> ((taglist-content <span class="org-string">""</span><span class="org-parinfer-pretty-parensXdim-paren">))</span>
-    (<span class="org-keyword">when</span> (<span class="org-keyword">and</span> (<span class="org-function-name">org-static-blog-get-tags</span> post-filename) <span class="org-variable-name">org-static-blog-enable-tags</span><span class="org-parinfer-pretty-parensXdim-paren">)</span>
-      (<span class="org-keyword">setq</span> taglist-content (<span class="org-constant">concat</span> <span class="org-string">"&lt;div class=\"taglist\"&gt;"</span>
-                                    <span class="org-string">":"</span><span class="org-parinfer-pretty-parensXdim-paren">))</span>
-      (<span class="org-keyword">dolist</span> (tag (<span class="org-function-name">org-static-blog-get-tags</span> post-filename<span class="org-parinfer-pretty-parensXdim-paren">))</span>
-        (<span class="org-keyword">setq</span> taglist-content (<span class="org-constant">concat</span> taglist-content <span class="org-string">"&lt;a href=\""</span>
-                                      <span class="org-variable-name">org-static-blog-publish-url</span>
-                                      <span class="org-string">"tag-"</span> (<span class="org-constant">downcase</span> tag) <span class="org-string">".html"</span>
-                                      <span class="org-string">"\"&gt;"</span> tag <span class="org-string">"&lt;/a&gt;:"</span><span class="org-parinfer-pretty-parensXdim-paren">)))</span>
-      (<span class="org-keyword">setq</span> taglist-content (<span class="org-constant">concat</span> taglist-content <span class="org-string">"&lt;/div&gt;"</span><span class="org-parinfer-pretty-parensXdim-paren">)))</span>
-    taglist-content<span class="org-parinfer-pretty-parensXdim-paren">))</span>
-</pre>
-</div>
+<pre class="src src-emacs-lisp">(<span class="org-keyword">defun</span> <span class="org-function-name">ragone-htmlize</span> (<span class="org-parinfer-pretty-parensXdim-paren">)</span>
+  <span class="org-doc">"Convert the htmlized region to an image and copy to clipboard."</span>
+  (<span class="org-keyword">interactive</span><span class="org-parinfer-pretty-parensXdim-paren">)</span>
+  (<span class="org-keyword">let</span> ((<span class="org-variable-name">htmlize-pre-style</span> t<span class="org-parinfer-pretty-parensXdim-paren">)</span>
+        (region-background (<span class="org-function-name">face-attribute</span> <span class="org-highlight-quoted-quote">'</span><span class="org-highlight-quoted-symbol">region</span> <span class="org-builtin">:background</span><span class="org-parinfer-pretty-parensXdim-paren">))</span>
+        (start (<span class="org-keyword">if</span> (<span class="org-function-name">region-active-p</span><span class="org-parinfer-pretty-parensXdim-paren">)</span>
+                   (<span class="org-constant">region-beginning</span>) (<span class="org-constant">point-min</span><span class="org-parinfer-pretty-parensXdim-paren">)))</span>
+        (end (<span class="org-keyword">if</span> (<span class="org-function-name">region-active-p</span><span class="org-parinfer-pretty-parensXdim-paren">)</span>
+                 (<span class="org-constant">region-end</span>) (<span class="org-constant">point-max</span><span class="org-parinfer-pretty-parensXdim-paren">))))</span>
+    (<span class="org-function-name">set-face-background</span> <span class="org-highlight-quoted-quote">'</span><span class="org-highlight-quoted-symbol">region</span> <span class="org-string">"unspecified"</span><span class="org-parinfer-pretty-parensXdim-paren">)</span>
+    (<span class="org-keyword">unwind-protect</span>
+      (<span class="org-function-name">ragone-htmlize-to-clipboard</span>
+       (<span class="org-function-name">htmlize-region-for-paste</span> start end<span class="org-parinfer-pretty-parensXdim-paren">))</span>
+      (<span class="org-function-name">set-face-background</span> <span class="org-highlight-quoted-quote">'</span><span class="org-highlight-quoted-symbol">region</span> region-background<span class="org-parinfer-pretty-parensXdim-paren">))))</span>
 
-<div class="org-src-container">
-<pre class="src src-rust"><span class="org-keyword">fn</span> <span class="org-function-name">test</span> () {
-    <span class="org-keyword">let</span> <span class="org-variable-name">test</span> = <span class="org-type">Vector</span>::new();
-}
-</pre>
-</div>
-
-<div class="org-src-container">
-<pre class="src src-shell">
-</pre>
-</div>
-
-<div class="org-src-container">
-<pre class="src src-clojure">
-</pre>
-</div>
-
-<div class="org-src-container">
-<pre class="src src-javascript">
-</pre>
-</div>
-
-<div class="org-src-container">
-<pre class="src src-sh">
-</pre>
-</div>
-
-<div class="org-src-container">
-<pre class="src src-bash">
+(<span class="org-keyword">defun</span> <span class="org-function-name">ragone-htmlize-to-clipboard</span> (html<span class="org-parinfer-pretty-parensXdim-paren">)</span>
+  <span class="org-doc">"Copy HTML to clipboard."</span>
+  (<span class="org-keyword">with-temp-buffer</span>
+    (<span class="org-constant">insert</span> html<span class="org-parinfer-pretty-parensXdim-paren">)</span>
+    (<span class="org-function-name">call-shell-region</span>
+     (<span class="org-constant">point-min</span>) (<span class="org-constant">point-max</span><span class="org-parinfer-pretty-parensXdim-paren">)</span>
+     <span class="org-string">"wkhtmltoimage -f png - - | xclip -i -selection clipboard -t image/png"</span><span class="org-parinfer-pretty-parensXdim-paren">)))</span>
 </pre>
 </div>
 </div>

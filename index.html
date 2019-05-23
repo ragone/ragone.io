@@ -18,11 +18,41 @@
       </div></div>
 <div id="content">
 
+<div class="headline"> <h1 class="post-title"><a href="htmlize.html">htmlize.el</a></h1>
+<div class="taglist">:<a href="https://ragone.io/tag-emacs.html">emacs</a>:<a href="https://ragone.io/tag-snippets.html">snippets</a>:</div></div><p>
+Quickly copy a htmlized buffer or region to the clipboard.
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(<span class="org-keyword">defun</span> <span class="org-function-name">ragone-htmlize</span> (<span class="org-parinfer-pretty-parensXdim-paren">)</span>
+  <span class="org-doc">"Convert the htmlized region to an image and copy to clipboard."</span>
+  (<span class="org-keyword">interactive</span><span class="org-parinfer-pretty-parensXdim-paren">)</span>
+  (<span class="org-keyword">let</span> ((<span class="org-variable-name">htmlize-pre-style</span> t<span class="org-parinfer-pretty-parensXdim-paren">)</span>
+        (region-background (<span class="org-function-name">face-attribute</span> <span class="org-highlight-quoted-quote">'</span><span class="org-highlight-quoted-symbol">region</span> <span class="org-builtin">:background</span><span class="org-parinfer-pretty-parensXdim-paren">))</span>
+        (start (<span class="org-keyword">if</span> (<span class="org-function-name">region-active-p</span><span class="org-parinfer-pretty-parensXdim-paren">)</span>
+                   (<span class="org-constant">region-beginning</span>) (<span class="org-constant">point-min</span><span class="org-parinfer-pretty-parensXdim-paren">)))</span>
+        (end (<span class="org-keyword">if</span> (<span class="org-function-name">region-active-p</span><span class="org-parinfer-pretty-parensXdim-paren">)</span>
+                 (<span class="org-constant">region-end</span>) (<span class="org-constant">point-max</span><span class="org-parinfer-pretty-parensXdim-paren">))))</span>
+    (<span class="org-function-name">set-face-background</span> <span class="org-highlight-quoted-quote">'</span><span class="org-highlight-quoted-symbol">region</span> <span class="org-string">"unspecified"</span><span class="org-parinfer-pretty-parensXdim-paren">)</span>
+    (<span class="org-keyword">unwind-protect</span>
+      (<span class="org-function-name">ragone-htmlize-to-clipboard</span>
+       (<span class="org-function-name">htmlize-region-for-paste</span> start end<span class="org-parinfer-pretty-parensXdim-paren">))</span>
+      (<span class="org-function-name">set-face-background</span> <span class="org-highlight-quoted-quote">'</span><span class="org-highlight-quoted-symbol">region</span> region-background<span class="org-parinfer-pretty-parensXdim-paren">))))</span>
+
+(<span class="org-keyword">defun</span> <span class="org-function-name">ragone-htmlize-to-clipboard</span> (html<span class="org-parinfer-pretty-parensXdim-paren">)</span>
+  <span class="org-doc">"Copy HTML to clipboard."</span>
+  (<span class="org-keyword">with-temp-buffer</span>
+    (<span class="org-constant">insert</span> html<span class="org-parinfer-pretty-parensXdim-paren">)</span>
+    (<span class="org-function-name">call-shell-region</span>
+     (<span class="org-constant">point-min</span>) (<span class="org-constant">point-max</span><span class="org-parinfer-pretty-parensXdim-paren">)</span>
+     <span class="org-string">"wkhtmltoimage -f png - - | xclip -i -selection clipboard -t image/png"</span><span class="org-parinfer-pretty-parensXdim-paren">)))</span>
+</pre>
+</div>
+
 <div class="headline"> <h1 class="post-title"><a href="projects.html">Projects</a></h1>
 </div>
-<div id="outline-container-org61c4deb" class="outline-2">
-<h2 id="org61c4deb">magit-diff-flycheck&#xa0;&#xa0;&#xa0;<span class="tag"><span class="EmacsLisp">EmacsLisp</span>&#xa0;<span class="2019">2019</span></span></h2>
-<div class="outline-text-2" id="text-org61c4deb">
+<div id="outline-container-org17e2c27" class="outline-2">
+<h2 id="org17e2c27">magit-diff-flycheck&#xa0;&#xa0;&#xa0;<span class="tag"><span class="EmacsLisp">EmacsLisp</span>&#xa0;<span class="2019">2019</span></span></h2>
+<div class="outline-text-2" id="text-org17e2c27">
 <p>
 Interactive tool for lint output in Git diffs.
 </p>
@@ -32,9 +62,9 @@ Interactive tool for lint output in Git diffs.
 </ul>
 </div>
 </div>
-<div id="outline-container-org925fc46" class="outline-2">
-<h2 id="org925fc46">lint-emit&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Rust">Rust</span>&#xa0;<span class="2019">2019</span></span></h2>
-<div class="outline-text-2" id="text-org925fc46">
+<div id="outline-container-orga4c5b54" class="outline-2">
+<h2 id="orga4c5b54">lint-emit&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Rust">Rust</span>&#xa0;<span class="2019">2019</span></span></h2>
+<div class="outline-text-2" id="text-orga4c5b54">
 <p>
 Command-line utility to run concurrent linters on a subset of lines.
 </p>
@@ -44,9 +74,9 @@ Command-line utility to run concurrent linters on a subset of lines.
 </ul>
 </div>
 </div>
-<div id="outline-container-org4138fa5" class="outline-2">
-<h2 id="org4138fa5">QuietMind&#xa0;&#xa0;&#xa0;<span class="tag"><span class="ReactNative">ReactNative</span>&#xa0;<span class="2018">2018</span></span></h2>
-<div class="outline-text-2" id="text-org4138fa5">
+<div id="outline-container-orgf31e99e" class="outline-2">
+<h2 id="orgf31e99e">QuietMind&#xa0;&#xa0;&#xa0;<span class="tag"><span class="ReactNative">ReactNative</span>&#xa0;<span class="2018">2018</span></span></h2>
+<div class="outline-text-2" id="text-orgf31e99e">
 <p>
 A silent meditation tool for iOS and Android.
 </p>
@@ -57,11 +87,11 @@ A silent meditation tool for iOS and Android.
 </ul>
 </div>
 </div>
-<div id="outline-container-org7297943" class="outline-2">
-<h2 id="org7297943">Emacs Config&#xa0;&#xa0;&#xa0;<span class="tag"><span class="EmacsLisp">EmacsLisp</span>&#xa0;<span class="2016">2016</span></span></h2>
-<div class="outline-text-2" id="text-org7297943">
+<div id="outline-container-org844228b" class="outline-2">
+<h2 id="org844228b">Emacs Config&#xa0;&#xa0;&#xa0;<span class="tag"><span class="EmacsLisp">EmacsLisp</span>&#xa0;<span class="2016">2016</span></span></h2>
+<div class="outline-text-2" id="text-org844228b">
 <p>
-Personal configuration for Emacs based on Doom Emacs.
+Personal configuration based on Doom Emacs.
 </p>
 <ul class="org-ul">
 <li><a href="https://github.com/ragone/.doom.d">GitHub</a></li>
