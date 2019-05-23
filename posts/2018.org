@@ -1,0 +1,9 @@
+#+TITLE: 2018
+#+DATE: <2018-01-01 Mon>
+#+FILETAGS: projects
+
+* QuietMind :ReactNative:
+A silent meditation tool for iOS and Android.
+- [[https://github.com/ragone/quietmind][GitHub]]
+- [[https://itunes.apple.com/dk/app/quietmind/id1375294277][Apple App Store]]
+- [[https://play.google.com/store/apps/details?id=ragone.io.quietmind][Google Play Store]]

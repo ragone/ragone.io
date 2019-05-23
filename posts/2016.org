@@ -1,0 +1,7 @@
+#+TITLE: 2016
+#+DATE: <2016-01-01 Fri>
+#+FILETAGS: projects
+
+* Emacs Config :EmacsLisp:
+Personal configuration based on Doom Emacs.
+- [[https://github.com/ragone/.doom.d][GitHub]]

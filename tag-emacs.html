@@ -47,6 +47,32 @@ Quickly copy a htmlized buffer or region to the clipboard.
      <span class="org-string">"wkhtmltoimage -f png - - | xclip -i -selection clipboard -t image/png"</span><span class="org-parinfer-pretty-parensXdim-paren">)))</span>
 </pre>
 </div>
+
+<div class="headline"> <h1 class="post-title"><a href="deft-or-close.html">deft-or-close</a></h1>
+<div class="taglist">:<a href="https://ragone.io/tag-emacs.html">emacs</a>:<a href="https://ragone.io/tag-snippets.html">snippets</a>:</div></div><p>
+Easily toggle between your notes and your working buffer.
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(<span class="org-keyword">defun</span> <span class="org-function-name">ragone-kill-deft-buffers</span> (<span class="org-parinfer-pretty-parensXdim-paren">)</span>
+  <span class="org-doc">"Toggle Deft mode."</span>
+  (<span class="org-keyword">interactive</span><span class="org-parinfer-pretty-parensXdim-paren">)</span>
+  (<span class="org-keyword">save-excursion</span>
+    (<span class="org-keyword">let</span> ((<span class="org-function-name">count</span> <span class="org-highlight-numbers-number">0</span><span class="org-parinfer-pretty-parensXdim-paren">))</span>
+      (<span class="org-keyword">dolist</span> (buffer (<span class="org-constant">buffer-list</span><span class="org-parinfer-pretty-parensXdim-paren">))</span>
+        (<span class="org-constant">set-buffer</span> buffer<span class="org-parinfer-pretty-parensXdim-paren">)</span>
+        (<span class="org-keyword">when</span> (<span class="org-constant">not</span> (<span class="org-constant">eq</span> nil deft-note-mode<span class="org-parinfer-pretty-parensXdim-paren">))</span>
+          (<span class="org-keyword">setq</span> count (<span class="org-constant">1+</span> count<span class="org-parinfer-pretty-parensXdim-paren">))</span>
+          (<span class="org-constant">kill-buffer</span> buffer<span class="org-parinfer-pretty-parensXdim-paren">))))))</span>
+
+(<span class="org-keyword">defun</span> <span class="org-function-name">ragone-deft-or-close</span> (<span class="org-parinfer-pretty-parensXdim-paren">)</span>
+  <span class="org-doc">"Kill all Deft buffers."</span>
+  (<span class="org-keyword">interactive</span><span class="org-parinfer-pretty-parensXdim-paren">)</span>
+  (<span class="org-keyword">if</span> (<span class="org-keyword">or</span> (<span class="org-constant">eq</span> <span class="org-variable-name">major-mode</span> <span class="org-highlight-quoted-quote">'</span><span class="org-highlight-quoted-symbol">deft-mode</span><span class="org-parinfer-pretty-parensXdim-paren">)</span>
+          (<span class="org-constant">not</span> (<span class="org-constant">eq</span> nil deft-note-mode<span class="org-parinfer-pretty-parensXdim-paren">)))</span>
+      (<span class="org-keyword">progn</span> (<span class="org-function-name">ragone-kill-deft-buffers</span>) (<span class="org-constant">kill-buffer</span> <span class="org-string">"*Deft*"</span><span class="org-parinfer-pretty-parensXdim-paren">))</span>
+    (<span class="org-function-name">deft</span><span class="org-parinfer-pretty-parensXdim-paren">)))</span>
+</pre>
+</div>
 <div id="archive">
 <a href="archive.html">Other posts</a>
 </div>

@@ -1,0 +1,12 @@
+#+TITLE: 2019
+#+DATE: <2019-01-01 Tue>
+#+FILETAGS: projects
+
+* magit-diff-flycheck :EmacsLisp:2019:
+Interactive tool for lint output in Git diffs.
+- [[https://github.com/ragone/magit-diff-flycheck][GitHub]]
+- [[https://melpa.org/#/magit-diff-flycheck][Melpa.org]]
+* lint-emit :Rust:2019:
+Command-line utility to run concurrent linters on a subset of lines.
+- [[https://github.com/ragone/lint-emit][GitHub]]
+- [[https://crates.io/crates/lint-emit/crates.io][Crates.io]]

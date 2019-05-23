@@ -1,0 +1,25 @@
+#+TITLE: deft-or-close
+#+DATE: <2019-05-11 Sat>
+#+FILETAGS: emacs snippets
+
+Easily toggle between your notes and your working buffer.
+#+BEGIN_SRC emacs-lisp
+(defun ragone-kill-deft-buffers ()
+  "Toggle Deft mode."
+  (interactive)
+  (save-excursion
+    (let ((count 0))
+      (dolist (buffer (buffer-list))
+        (set-buffer buffer)
+        (when (not (eq nil deft-note-mode))
+          (setq count (1+ count))
+          (kill-buffer buffer))))))
+
+(defun ragone-deft-or-close ()
+  "Kill all Deft buffers."
+  (interactive)
+  (if (or (eq major-mode 'deft-mode)
+          (not (eq nil deft-note-mode)))
+      (progn (ragone-kill-deft-buffers) (kill-buffer "*Deft*"))
+    (deft)))
+#+END_SRC

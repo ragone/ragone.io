@@ -6,48 +6,18 @@
       type="application/rss+xml"
       href="https://ragone.io/rss.xml"
       title="RSS feed for https://ragone.io/"/>
-<title>ragone.io</title>
+<title>deft-or-close</title>
 <meta  name="author" content="ragone" />
       <link href= "static/style.css" rel="stylesheet" type="text/css" />
       <link href= "static/htmlize.css" rel="stylesheet" type="text/css" />
       <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
       <meta name="viewport" content="initial-scale=1,width=device-width,minimum-scale=1"></head>
 <body>
-<div id="preamble" class="status"><div class="header">
+<div id="preamble" class="status">
+<div class="header">
         <a href="https://ragone.io">Alex Ragone - Web Developer</a>
       </div></div>
 <div id="content">
-<h1 class="title">Posts tagged "snippets":</h1>
-<div class="headline"> <h1 class="post-title"><a href="htmlize.html">htmlize.el</a></h1>
-<div class="taglist">:<a href="https://ragone.io/tag-emacs.html">emacs</a>:<a href="https://ragone.io/tag-snippets.html">snippets</a>:</div></div><p>
-Quickly copy a htmlized buffer or region to the clipboard.
-</p>
-<div class="org-src-container">
-<pre class="src src-emacs-lisp">(<span class="org-keyword">defun</span> <span class="org-function-name">ragone-htmlize</span> (<span class="org-parinfer-pretty-parensXdim-paren">)</span>
-  <span class="org-doc">"Convert the htmlized region to an image and copy to clipboard."</span>
-  (<span class="org-keyword">interactive</span><span class="org-parinfer-pretty-parensXdim-paren">)</span>
-  (<span class="org-keyword">let</span> ((<span class="org-variable-name">htmlize-pre-style</span> t<span class="org-parinfer-pretty-parensXdim-paren">)</span>
-        (region-background (<span class="org-function-name">face-attribute</span> <span class="org-highlight-quoted-quote">'</span><span class="org-highlight-quoted-symbol">region</span> <span class="org-builtin">:background</span><span class="org-parinfer-pretty-parensXdim-paren">))</span>
-        (start (<span class="org-keyword">if</span> (<span class="org-function-name">region-active-p</span><span class="org-parinfer-pretty-parensXdim-paren">)</span>
-                   (<span class="org-constant">region-beginning</span>) (<span class="org-constant">point-min</span><span class="org-parinfer-pretty-parensXdim-paren">)))</span>
-        (end (<span class="org-keyword">if</span> (<span class="org-function-name">region-active-p</span><span class="org-parinfer-pretty-parensXdim-paren">)</span>
-                 (<span class="org-constant">region-end</span>) (<span class="org-constant">point-max</span><span class="org-parinfer-pretty-parensXdim-paren">))))</span>
-    (<span class="org-function-name">set-face-background</span> <span class="org-highlight-quoted-quote">'</span><span class="org-highlight-quoted-symbol">region</span> <span class="org-string">"unspecified"</span><span class="org-parinfer-pretty-parensXdim-paren">)</span>
-    (<span class="org-keyword">unwind-protect</span>
-      (<span class="org-function-name">ragone-htmlize-to-clipboard</span>
-       (<span class="org-function-name">htmlize-region-for-paste</span> start end<span class="org-parinfer-pretty-parensXdim-paren">))</span>
-      (<span class="org-function-name">set-face-background</span> <span class="org-highlight-quoted-quote">'</span><span class="org-highlight-quoted-symbol">region</span> region-background<span class="org-parinfer-pretty-parensXdim-paren">))))</span>
-
-(<span class="org-keyword">defun</span> <span class="org-function-name">ragone-htmlize-to-clipboard</span> (html<span class="org-parinfer-pretty-parensXdim-paren">)</span>
-  <span class="org-doc">"Copy HTML to clipboard."</span>
-  (<span class="org-keyword">with-temp-buffer</span>
-    (<span class="org-constant">insert</span> html<span class="org-parinfer-pretty-parensXdim-paren">)</span>
-    (<span class="org-function-name">call-shell-region</span>
-     (<span class="org-constant">point-min</span>) (<span class="org-constant">point-max</span><span class="org-parinfer-pretty-parensXdim-paren">)</span>
-     <span class="org-string">"wkhtmltoimage -f png - - | xclip -i -selection clipboard -t image/png"</span><span class="org-parinfer-pretty-parensXdim-paren">)))</span>
-</pre>
-</div>
-
 <div class="headline"> <h1 class="post-title"><a href="deft-or-close.html">deft-or-close</a></h1>
 <div class="taglist">:<a href="https://ragone.io/tag-emacs.html">emacs</a>:<a href="https://ragone.io/tag-snippets.html">snippets</a>:</div></div><p>
 Easily toggle between your notes and your working buffer.
@@ -73,9 +43,12 @@ Easily toggle between your notes and your working buffer.
     (<span class="org-function-name">deft</span><span class="org-parinfer-pretty-parensXdim-paren">)))</span>
 </pre>
 </div>
-<div id="archive">
-<a href="archive.html">Other posts</a>
 </div>
-</div>
+<div id="postamble" class="status"><div id="archive">
+        <a href="archive.html">archive</a>
+      </div>
+      <center>
+        <p>Find me on <a title="LinkedIn" href="https://www.linkedin.com/in/alex-ragone" target="_blank" rel="noopener">LinkedIn</a> or <a title="Github" href="https://github.com/ragone" target="_blank" rel="noopener">Github</a>!</p>
+      </center></div>
 </body>
 </html>
