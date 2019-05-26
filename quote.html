@@ -25,10 +25,10 @@ The complete list of quotes can be found <a href="https://ragone.io/static/quote
 </p>
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(<span class="org-keyword">defvar</span> <span class="org-variable-name">ragone-quotes-file</span> <span class="org-string">"~/.doom.d/quotes.txt"</span>
-  <span class="org-doc">"File to look for quotes"</span><span class="org-parinfer-pretty-parensXdim-paren">)</span>
+  <span class="org-doc">"File to lookup quotes."</span><span class="org-parinfer-pretty-parensXdim-paren">)</span>
 
 (<span class="org-keyword">defvar</span> <span class="org-variable-name">ragone-quotes-file-seperator-regex</span> <span class="org-string">"\n%\n"</span>
-  <span class="org-doc">"Delimiter for seperating the line in `</span><span class="org-doc"><span class="org-constant">ragone-quotes-file</span></span><span class="org-doc">'"</span><span class="org-parinfer-pretty-parensXdim-paren">)</span>
+  <span class="org-doc">"Delimiter for seperating the line in `</span><span class="org-doc"><span class="org-constant">ragone-quotes-file</span></span><span class="org-doc">'."</span><span class="org-parinfer-pretty-parensXdim-paren">)</span>
 
 (<span class="org-keyword">defvar</span> <span class="org-variable-name">ragone-quotes-author-regex</span> <span class="org-string">"^--"</span>
   <span class="org-doc">"Regex for getting the author of the quote.</span>
@@ -36,7 +36,7 @@ The complete list of quotes can be found <a href="https://ragone.io/static/quote
 <span class="org-doc">Anything after this will be changed to face `</span><span class="org-doc"><span class="org-constant">font-lock-comment-face</span></span><span class="org-doc">'."</span><span class="org-parinfer-pretty-parensXdim-paren">)</span>
 
 (<span class="org-keyword">defun</span> <span class="org-function-name">ragone-get-quote</span> (<span class="org-type">&amp;optional</span> nth<span class="org-parinfer-pretty-parensXdim-paren">)</span>
-  <span class="org-doc">"Get a random quote from `</span><span class="org-doc"><span class="org-constant">ragone-quotes-file</span></span><span class="org-doc">'</span>
+  <span class="org-doc">"Get a random quote from `</span><span class="org-doc"><span class="org-constant">ragone-quotes-file</span></span><span class="org-doc">'.</span>
 
 <span class="org-doc">Optionally get the NTH quote."</span>
   (<span class="org-keyword">let*</span> ((quotes (<span class="org-function-name">split-string</span>
