@@ -2,7 +2,7 @@
 #+DATE: <2019-05-23 Thu>
 #+FILETAGS: emacs snippets
 
-Quickly copy a htmlized buffer or region to the clipboard.
+Quickly copy an image of a htmlized buffer or region to the clipboard.
 #+BEGIN_SRC emacs-lisp
 (defun ragone-htmlize ()
   "Convert the htmlized region to an image and copy to clipboard."

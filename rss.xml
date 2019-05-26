@@ -4,7 +4,7 @@
 <title>ragone.io</title>
 <description>ragone.io</description>
 <link>https://ragone.io/</link>
-<lastBuildDate>Sun, 26 May 2019 17:01:42 +1200</lastBuildDate>
+<lastBuildDate>Sun, 26 May 2019 17:10:53 +1200</lastBuildDate>
 <item>
   <title>quotes.el</title>
   <description><![CDATA[
@@ -110,7 +110,7 @@ C-u M-x magit-diff-flycheck
   <title>htmlize.el</title>
   <description><![CDATA[
 <div class="taglist">:<a href="https://ragone.io/tag-emacs.html">emacs</a>:<a href="https://ragone.io/tag-snippets.html">snippets</a>:</div></div><p>
-Quickly copy a htmlized buffer or region to the clipboard.
+Quickly copy an image of a htmlized buffer or region to the clipboard.
 </p>
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(<span class="org-keyword">defun</span> <span class="org-function-name">ragone-htmlize</span> (<span class="org-parinfer-pretty-parensXdim-paren">)</span>
