@@ -4,7 +4,7 @@
 <title>ragone.io</title>
 <description>ragone.io</description>
 <link>https://ragone.io/</link>
-<lastBuildDate>Sun, 26 May 2019 16:34:55 +1200</lastBuildDate>
+<lastBuildDate>Sun, 26 May 2019 17:01:42 +1200</lastBuildDate>
 <item>
   <title>quotes.el</title>
   <description><![CDATA[
@@ -38,8 +38,12 @@ The complete list of quotes can be found <a href="https://ragone.io/static/quote
          (selected-quote (<span class="org-constant">nth</span> (<span class="org-keyword">or</span> nth
                                   (<span class="org-constant">random</span> (<span class="org-constant">length</span> quotes<span class="org-parinfer-pretty-parensXdim-paren">)))</span>
                               quotes<span class="org-parinfer-pretty-parensXdim-paren">)))</span>
-    (<span class="org-constant">put-text-property</span> (<span class="org-constant">string-match</span> <span class="org-variable-name">ragone-quotes-author-regex</span> selected-quote<span class="org-parinfer-pretty-parensXdim-paren">)</span>
-                       (<span class="org-constant">length</span> selected-quote) <span class="org-highlight-quoted-quote">'</span><span class="org-highlight-quoted-symbol">face</span> <span class="org-highlight-quoted-quote">'</span><span class="org-variable-name">font-lock-comment-face</span> selected-quote<span class="org-parinfer-pretty-parensXdim-paren">)</span>
+    (<span class="org-constant">put-text-property</span>
+     (<span class="org-constant">string-match</span> <span class="org-variable-name">ragone-quotes-author-regex</span> selected-quote<span class="org-parinfer-pretty-parensXdim-paren">)</span>
+     (<span class="org-constant">length</span> selected-quote<span class="org-parinfer-pretty-parensXdim-paren">)</span>
+     <span class="org-highlight-quoted-quote">'</span><span class="org-highlight-quoted-symbol">face</span>
+     <span class="org-highlight-quoted-quote">'</span><span class="org-variable-name">font-lock-comment-face</span>
+     selected-quote<span class="org-parinfer-pretty-parensXdim-paren">)</span>
     selected-quote<span class="org-parinfer-pretty-parensXdim-paren">))</span>
 
 <span class="org-comment-delimiter">;; </span><span class="org-comment">Update your scratch buffer</span>

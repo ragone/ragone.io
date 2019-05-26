@@ -30,8 +30,12 @@ Optionally get the NTH quote."
          (selected-quote (nth (or nth
                                   (random (length quotes)))
                               quotes)))
-    (put-text-property (string-match ragone-quotes-author-regex selected-quote)
-                       (length selected-quote) 'face 'font-lock-comment-face selected-quote)
+    (put-text-property
+     (string-match ragone-quotes-author-regex selected-quote)
+     (length selected-quote)
+     'face
+     'font-lock-comment-face
+     selected-quote)
     selected-quote))
 
 ;; Update your scratch buffer
