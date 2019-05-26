@@ -18,11 +18,54 @@
       </div></div>
 <div id="content">
 <h1 class="title">Posts tagged "projects":</h1>
+<div class="headline"> <h1 class="post-title"><a href="magit-diff-flycheck.html">magit-diff-flycheck.el</a></h1>
+<div class="taglist">:<a href="https://ragone.io/tag-projects.html">projects</a>:<a href="https://ragone.io/tag-emacs.html">emacs</a>:</div></div><p>
+For the past couple of month I have been working on tools which allows you
+to run linters on the added/modified lines of a Git diff. One of these tools are
+<code>magit-diff-flycheck</code>.
+</p>
+
+<p>
+This is primarily meant to be used on legacy projects where you do not want to
+see errors for the whole file but only for the added/modified lines.
+</p>
+
+<p>
+The package is published on <a href="https://melpa.org/#/magit-diff-flycheck">MELPA</a> package manager and on <a href="https://github.com/ragone/magit-diff-flycheck">GitHub</a> under license GNU GPL-3.0.
+</p>
+
+<div id="outline-container-orgb9e4d6c" class="outline-2">
+<h2 id="orgb9e4d6c">Examples</h2>
+<div class="outline-text-2" id="text-orgb9e4d6c">
+<p>
+Run <code>M-x magit-diff-flycheck</code> in a magit-diff buffer to display a filtered list
+of <a href="https://github.com/flycheck/flycheck">Flycheck</a> errors for the added/modified lines only.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span class="org-comment-delimiter">;; </span><span class="org-comment">Run Flycheck on added/modified lines by default</span>
+M-x magit-diff-flycheck
+</pre>
+</div>
+
+<p>
+Use can also run the command with a prefix which will prompt you for the scope
+of the errors.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span class="org-comment-delimiter">;; </span><span class="org-comment">Choose scope of error filtering to symbol files or lines</span>
+C-u M-x magit-diff-flycheck
+</pre>
+</div>
+</div>
+</div>
+
 <div class="headline"> <h1 class="post-title"><a href="2019.html">2019</a></h1>
 <div class="taglist">:<a href="https://ragone.io/tag-projects.html">projects</a>:</div></div>
-<div id="outline-container-org11a1f9f" class="outline-2">
-<h2 id="org11a1f9f">magit-diff-flycheck&#xa0;&#xa0;&#xa0;<span class="tag"><span class="EmacsLisp">EmacsLisp</span>&#xa0;<span class="2019">2019</span></span></h2>
-<div class="outline-text-2" id="text-org11a1f9f">
+<div id="outline-container-org546af35" class="outline-2">
+<h2 id="org546af35">magit-diff-flycheck&#xa0;&#xa0;&#xa0;<span class="tag"><span class="EmacsLisp">EmacsLisp</span>&#xa0;<span class="2019">2019</span></span></h2>
+<div class="outline-text-2" id="text-org546af35">
 <p>
 Interactive tool for lint output in Git diffs.
 </p>
@@ -32,9 +75,9 @@ Interactive tool for lint output in Git diffs.
 </ul>
 </div>
 </div>
-<div id="outline-container-orgc25dcf6" class="outline-2">
-<h2 id="orgc25dcf6">lint-emit&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Rust">Rust</span>&#xa0;<span class="2019">2019</span></span></h2>
-<div class="outline-text-2" id="text-orgc25dcf6">
+<div id="outline-container-orgf325cd9" class="outline-2">
+<h2 id="orgf325cd9">lint-emit&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Rust">Rust</span>&#xa0;<span class="2019">2019</span></span></h2>
+<div class="outline-text-2" id="text-orgf325cd9">
 <p>
 Command-line utility to run concurrent linters on a subset of lines.
 </p>
@@ -47,9 +90,9 @@ Command-line utility to run concurrent linters on a subset of lines.
 
 <div class="headline"> <h1 class="post-title"><a href="2018.html">2018</a></h1>
 <div class="taglist">:<a href="https://ragone.io/tag-projects.html">projects</a>:</div></div>
-<div id="outline-container-orgd661049" class="outline-2">
-<h2 id="orgd661049">QuietMind&#xa0;&#xa0;&#xa0;<span class="tag"><span class="ReactNative">ReactNative</span></span></h2>
-<div class="outline-text-2" id="text-orgd661049">
+<div id="outline-container-orgc51748f" class="outline-2">
+<h2 id="orgc51748f">QuietMind&#xa0;&#xa0;&#xa0;<span class="tag"><span class="ReactNative">ReactNative</span></span></h2>
+<div class="outline-text-2" id="text-orgc51748f">
 <p>
 A silent meditation tool for iOS and Android.
 </p>
@@ -63,9 +106,9 @@ A silent meditation tool for iOS and Android.
 
 <div class="headline"> <h1 class="post-title"><a href="2016.html">2016</a></h1>
 <div class="taglist">:<a href="https://ragone.io/tag-projects.html">projects</a>:</div></div>
-<div id="outline-container-org2358ab3" class="outline-2">
-<h2 id="org2358ab3">Emacs Config&#xa0;&#xa0;&#xa0;<span class="tag"><span class="EmacsLisp">EmacsLisp</span></span></h2>
-<div class="outline-text-2" id="text-org2358ab3">
+<div id="outline-container-org04f37a8" class="outline-2">
+<h2 id="org04f37a8">Emacs Config&#xa0;&#xa0;&#xa0;<span class="tag"><span class="EmacsLisp">EmacsLisp</span></span></h2>
+<div class="outline-text-2" id="text-org04f37a8">
 <p>
 Personal configuration based on Doom Emacs.
 </p>

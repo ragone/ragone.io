@@ -1,0 +1,39 @@
+#+TITLE: quotes.el
+#+DATE: <2019-05-26 Sun>
+#+FILETAGS: emacs snippets
+
+My initial buffer displays a random quote from a list of programming/CS quotes.
+The complete list of quotes can be found [[https://ragone.io/static/quotes.txt][here]].
+#+BEGIN_SRC emacs-lisp
+(defvar ragone-quotes-file "~/.doom.d/quotes.txt"
+  "File to look for quotes")
+
+(defvar ragone-quotes-file-seperator-regex "\n%\n"
+  "Delimiter for seperating the line in `ragone-quotes-file'")
+
+(defvar ragone-quotes-author-regex "^--"
+  "Regex for getting the author of the quote.
+
+Anything after this will be changed to face `font-lock-comment-face'.")
+
+(defun ragone-get-quote (&optional nth)
+  "Get a random quote from `ragone-quotes-file'
+
+Optionally get the NTH quote."
+  (let* ((quotes (split-string
+                  (with-temp-buffer
+                    (insert-file-contents ragone-quotes-file)
+                    (buffer-substring-no-properties
+                     (point-min)
+                     (point-max)))
+                  ragone-quotes-file-seperator-regex t))
+         (selected-quote (nth (or nth
+                                  (random (length quotes)))
+                              quotes)))
+    (put-text-property (string-match ragone-quotes-author-regex selected-quote)
+                       (length selected-quote) 'face 'font-lock-comment-face selected-quote)
+    selected-quote))
+
+;; Update your scratch buffer
+(setq initial-scratch-message (ragone-get-quote))
+#+END_SRC

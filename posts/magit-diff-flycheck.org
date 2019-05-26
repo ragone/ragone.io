@@ -1,0 +1,30 @@
+#+TITLE: magit-diff-flycheck.el
+#+DATE: <2019-05-24 Fri>
+#+FILETAGS: projects emacs
+
+For the past couple of month I have been working on tools which allows you
+to run linters on the added/modified lines of a Git diff. One of these tools are
+=magit-diff-flycheck=.
+
+This is primarily meant to be used on legacy projects where you do not want to
+see errors for the whole file but only for the added/modified lines.
+
+The package is published on [[https://melpa.org/#/magit-diff-flycheck][MELPA]] package manager and on [[https://github.com/ragone/magit-diff-flycheck][GitHub]] under license GNU GPL-3.0.
+
+* Examples
+
+Run =M-x magit-diff-flycheck= in a magit-diff buffer to display a filtered list
+of [[https://github.com/flycheck/flycheck][Flycheck]] errors for the added/modified lines only.
+
+#+BEGIN_SRC emacs-lisp
+;; Run Flycheck on added/modified lines by default
+M-x magit-diff-flycheck
+#+END_SRC
+
+Use can also run the command with a prefix which will prompt you for the scope
+of the errors.
+
+#+BEGIN_SRC emacs-lisp
+;; Choose scope of error filtering to symbol files or lines
+C-u M-x magit-diff-flycheck
+#+END_SRC

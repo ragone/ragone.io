@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="alternate"
+      type="application/rss+xml"
+      href="https://ragone.io/rss.xml"
+      title="RSS feed for https://ragone.io/"/>
+<title>magit-diff-flycheck.el</title>
+<meta  name="author" content="ragone" />
+      <link href= "static/style.css" rel="stylesheet" type="text/css" />
+      <link href= "static/htmlize.css" rel="stylesheet" type="text/css" />
+      <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
+      <meta name="viewport" content="initial-scale=1,width=device-width,minimum-scale=1"></head>
+<body>
+<div id="preamble" class="status">
+<div class="header">
+        <a href="https://ragone.io">Alex Ragone - All things <code>code</code></a>
+      </div></div>
+<div id="content">
+<div class="headline"> <h1 class="post-title"><a href="magit-diff-flycheck.html">magit-diff-flycheck.el</a></h1>
+<div class="taglist">:<a href="https://ragone.io/tag-projects.html">projects</a>:<a href="https://ragone.io/tag-emacs.html">emacs</a>:</div></div><p>
+For the past couple of month I have been working on tools which allows you
+to run linters on the added/modified lines of a Git diff. One of these tools are
+<code>magit-diff-flycheck</code>.
+</p>
+
+<p>
+This is primarily meant to be used on legacy projects where you do not want to
+see errors for the whole file but only for the added/modified lines.
+</p>
+
+<p>
+The package is published on <a href="https://melpa.org/#/magit-diff-flycheck">MELPA</a> package manager and on <a href="https://github.com/ragone/magit-diff-flycheck">GitHub</a> under license GNU GPL-3.0.
+</p>
+
+<div id="outline-container-orgb9e4d6c" class="outline-2">
+<h2 id="orgb9e4d6c">Examples</h2>
+<div class="outline-text-2" id="text-orgb9e4d6c">
+<p>
+Run <code>M-x magit-diff-flycheck</code> in a magit-diff buffer to display a filtered list
+of <a href="https://github.com/flycheck/flycheck">Flycheck</a> errors for the added/modified lines only.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span class="org-comment-delimiter">;; </span><span class="org-comment">Run Flycheck on added/modified lines by default</span>
+M-x magit-diff-flycheck
+</pre>
+</div>
+
+<p>
+Use can also run the command with a prefix which will prompt you for the scope
+of the errors.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span class="org-comment-delimiter">;; </span><span class="org-comment">Choose scope of error filtering to symbol files or lines</span>
+C-u M-x magit-diff-flycheck
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status"><div id="archive">
+        <a href="archive.html">archive</a>
+      </div>
+      <center>
+        <p>Find me on <a title="LinkedIn" href="https://www.linkedin.com/in/alex-ragone" target="_blank" rel="noopener">LinkedIn</a> or <a title="Github" href="https://github.com/ragone" target="_blank" rel="noopener">Github</a>!</p>
+      </center></div>
+</body>
+</html>

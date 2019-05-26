@@ -4,7 +4,104 @@
 <title>ragone.io</title>
 <description>ragone.io</description>
 <link>https://ragone.io/</link>
-<lastBuildDate>Thu, 23 May 2019 23:46:18 +1200</lastBuildDate>
+<lastBuildDate>Sun, 26 May 2019 16:34:55 +1200</lastBuildDate>
+<item>
+  <title>quotes.el</title>
+  <description><![CDATA[
+<div class="taglist">:<a href="https://ragone.io/tag-emacs.html">emacs</a>:<a href="https://ragone.io/tag-snippets.html">snippets</a>:</div></div><p>
+My initial buffer displays a random quote from a list of programming/CS quotes.
+The complete list of quotes can be found <a href="https://ragone.io/static/quotes.txt">here</a>.
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(<span class="org-keyword">defvar</span> <span class="org-variable-name">ragone-quotes-file</span> <span class="org-string">"~/.doom.d/quotes.txt"</span>
+  <span class="org-doc">"File to look for quotes"</span><span class="org-parinfer-pretty-parensXdim-paren">)</span>
+
+(<span class="org-keyword">defvar</span> <span class="org-variable-name">ragone-quotes-file-seperator-regex</span> <span class="org-string">"\n%\n"</span>
+  <span class="org-doc">"Delimiter for seperating the line in `</span><span class="org-doc"><span class="org-constant">ragone-quotes-file</span></span><span class="org-doc">'"</span><span class="org-parinfer-pretty-parensXdim-paren">)</span>
+
+(<span class="org-keyword">defvar</span> <span class="org-variable-name">ragone-quotes-author-regex</span> <span class="org-string">"^--"</span>
+  <span class="org-doc">"Regex for getting the author of the quote.</span>
+
+<span class="org-doc">Anything after this will be changed to face `</span><span class="org-doc"><span class="org-constant">font-lock-comment-face</span></span><span class="org-doc">'."</span><span class="org-parinfer-pretty-parensXdim-paren">)</span>
+
+(<span class="org-keyword">defun</span> <span class="org-function-name">ragone-get-quote</span> (<span class="org-type">&amp;optional</span> nth<span class="org-parinfer-pretty-parensXdim-paren">)</span>
+  <span class="org-doc">"Get a random quote from `</span><span class="org-doc"><span class="org-constant">ragone-quotes-file</span></span><span class="org-doc">'</span>
+
+<span class="org-doc">Optionally get the NTH quote."</span>
+  (<span class="org-keyword">let*</span> ((quotes (<span class="org-function-name">split-string</span>
+                  (<span class="org-keyword">with-temp-buffer</span>
+                    (<span class="org-constant">insert-file-contents</span> <span class="org-variable-name">ragone-quotes-file</span><span class="org-parinfer-pretty-parensXdim-paren">)</span>
+                    (<span class="org-constant">buffer-substring-no-properties</span>
+                     (<span class="org-constant">point-min</span><span class="org-parinfer-pretty-parensXdim-paren">)</span>
+                     (<span class="org-constant">point-max</span><span class="org-parinfer-pretty-parensXdim-paren">)))</span>
+                  <span class="org-variable-name">ragone-quotes-file-seperator-regex</span> t<span class="org-parinfer-pretty-parensXdim-paren">))</span>
+         (selected-quote (<span class="org-constant">nth</span> (<span class="org-keyword">or</span> nth
+                                  (<span class="org-constant">random</span> (<span class="org-constant">length</span> quotes<span class="org-parinfer-pretty-parensXdim-paren">)))</span>
+                              quotes<span class="org-parinfer-pretty-parensXdim-paren">)))</span>
+    (<span class="org-constant">put-text-property</span> (<span class="org-constant">string-match</span> <span class="org-variable-name">ragone-quotes-author-regex</span> selected-quote<span class="org-parinfer-pretty-parensXdim-paren">)</span>
+                       (<span class="org-constant">length</span> selected-quote) <span class="org-highlight-quoted-quote">'</span><span class="org-highlight-quoted-symbol">face</span> <span class="org-highlight-quoted-quote">'</span><span class="org-variable-name">font-lock-comment-face</span> selected-quote<span class="org-parinfer-pretty-parensXdim-paren">)</span>
+    selected-quote<span class="org-parinfer-pretty-parensXdim-paren">))</span>
+
+<span class="org-comment-delimiter">;; </span><span class="org-comment">Update your scratch buffer</span>
+(<span class="org-keyword">setq</span> <span class="org-variable-name">initial-scratch-message</span> (ragone-get-quote<span class="org-parinfer-pretty-parensXdim-paren">))</span>
+</pre>
+</div>
+]]></description>
+  <category>emacs</category>
+  <category>snippets</category>
+  <link>https://ragone.io/quote.html</link>
+  <pubDate>Sun, 26 May 2019 12:00:00 +1200</pubDate>
+</item>
+<item>
+  <title>magit-diff-flycheck.el</title>
+  <description><![CDATA[
+<div class="taglist">:<a href="https://ragone.io/tag-projects.html">projects</a>:<a href="https://ragone.io/tag-emacs.html">emacs</a>:</div></div><p>
+For the past couple of month I have been working on tools which allows you
+to run linters on the added/modified lines of a Git diff. One of these tools are
+<code>magit-diff-flycheck</code>.
+</p>
+
+<p>
+This is primarily meant to be used on legacy projects where you do not want to
+see errors for the whole file but only for the added/modified lines.
+</p>
+
+<p>
+The package is published on <a href="https://melpa.org/#/magit-diff-flycheck">MELPA</a> package manager and on <a href="https://github.com/ragone/magit-diff-flycheck">GitHub</a> under license GNU GPL-3.0.
+</p>
+
+<div id="outline-container-orgb9e4d6c" class="outline-2">
+<h2 id="orgb9e4d6c">Examples</h2>
+<div class="outline-text-2" id="text-orgb9e4d6c">
+<p>
+Run <code>M-x magit-diff-flycheck</code> in a magit-diff buffer to display a filtered list
+of <a href="https://github.com/flycheck/flycheck">Flycheck</a> errors for the added/modified lines only.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span class="org-comment-delimiter">;; </span><span class="org-comment">Run Flycheck on added/modified lines by default</span>
+M-x magit-diff-flycheck
+</pre>
+</div>
+
+<p>
+Use can also run the command with a prefix which will prompt you for the scope
+of the errors.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span class="org-comment-delimiter">;; </span><span class="org-comment">Choose scope of error filtering to symbol files or lines</span>
+C-u M-x magit-diff-flycheck
+</pre>
+</div>
+</div>
+</div>
+]]></description>
+  <category>projects</category>
+  <category>emacs</category>
+  <link>https://ragone.io/magit-diff-flycheck.html</link>
+  <pubDate>Fri, 24 May 2019 12:00:00 +1200</pubDate>
+</item>
 <item>
   <title>htmlize.el</title>
   <description><![CDATA[
@@ -43,7 +140,7 @@ Quickly copy a htmlized buffer or region to the clipboard.
   <pubDate>Thu, 23 May 2019 12:00:00 +1200</pubDate>
 </item>
 <item>
-  <title>deft-or-close</title>
+  <title>deft-or-close.el</title>
   <description><![CDATA[
 <div class="taglist">:<a href="https://ragone.io/tag-emacs.html">emacs</a>:<a href="https://ragone.io/tag-snippets.html">snippets</a>:</div></div><p>
 Easily toggle between your notes and your working buffer.
@@ -79,9 +176,9 @@ Easily toggle between your notes and your working buffer.
   <title>2019</title>
   <description><![CDATA[
 <div class="taglist">:<a href="https://ragone.io/tag-projects.html">projects</a>:</div></div>
-<div id="outline-container-org11a1f9f" class="outline-2">
-<h2 id="org11a1f9f">magit-diff-flycheck&#xa0;&#xa0;&#xa0;<span class="tag"><span class="EmacsLisp">EmacsLisp</span>&#xa0;<span class="2019">2019</span></span></h2>
-<div class="outline-text-2" id="text-org11a1f9f">
+<div id="outline-container-org546af35" class="outline-2">
+<h2 id="org546af35">magit-diff-flycheck&#xa0;&#xa0;&#xa0;<span class="tag"><span class="EmacsLisp">EmacsLisp</span>&#xa0;<span class="2019">2019</span></span></h2>
+<div class="outline-text-2" id="text-org546af35">
 <p>
 Interactive tool for lint output in Git diffs.
 </p>
@@ -91,9 +188,9 @@ Interactive tool for lint output in Git diffs.
 </ul>
 </div>
 </div>
-<div id="outline-container-orgc25dcf6" class="outline-2">
-<h2 id="orgc25dcf6">lint-emit&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Rust">Rust</span>&#xa0;<span class="2019">2019</span></span></h2>
-<div class="outline-text-2" id="text-orgc25dcf6">
+<div id="outline-container-orgf325cd9" class="outline-2">
+<h2 id="orgf325cd9">lint-emit&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Rust">Rust</span>&#xa0;<span class="2019">2019</span></span></h2>
+<div class="outline-text-2" id="text-orgf325cd9">
 <p>
 Command-line utility to run concurrent linters on a subset of lines.
 </p>
@@ -112,9 +209,9 @@ Command-line utility to run concurrent linters on a subset of lines.
   <title>2018</title>
   <description><![CDATA[
 <div class="taglist">:<a href="https://ragone.io/tag-projects.html">projects</a>:</div></div>
-<div id="outline-container-orgd661049" class="outline-2">
-<h2 id="orgd661049">QuietMind&#xa0;&#xa0;&#xa0;<span class="tag"><span class="ReactNative">ReactNative</span></span></h2>
-<div class="outline-text-2" id="text-orgd661049">
+<div id="outline-container-orgc51748f" class="outline-2">
+<h2 id="orgc51748f">QuietMind&#xa0;&#xa0;&#xa0;<span class="tag"><span class="ReactNative">ReactNative</span></span></h2>
+<div class="outline-text-2" id="text-orgc51748f">
 <p>
 A silent meditation tool for iOS and Android.
 </p>
@@ -134,9 +231,9 @@ A silent meditation tool for iOS and Android.
   <title>2016</title>
   <description><![CDATA[
 <div class="taglist">:<a href="https://ragone.io/tag-projects.html">projects</a>:</div></div>
-<div id="outline-container-org2358ab3" class="outline-2">
-<h2 id="org2358ab3">Emacs Config&#xa0;&#xa0;&#xa0;<span class="tag"><span class="EmacsLisp">EmacsLisp</span></span></h2>
-<div class="outline-text-2" id="text-org2358ab3">
+<div id="outline-container-org04f37a8" class="outline-2">
+<h2 id="org04f37a8">Emacs Config&#xa0;&#xa0;&#xa0;<span class="tag"><span class="EmacsLisp">EmacsLisp</span></span></h2>
+<div class="outline-text-2" id="text-org04f37a8">
 <p>
 Personal configuration based on Doom Emacs.
 </p>
