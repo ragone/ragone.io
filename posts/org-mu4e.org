@@ -2,7 +2,7 @@
 #+DATE: <2019-06-14 Fri>
 #+FILETAGS: emacs snippets
 
-Tag elements if there are any unread emails in your `mu4e` inbox.
+Tag elements if there are any unread emails in your =mu4e= inbox.
 #+BEGIN_SRC emacs-lisp
 (defconst ragone-unread-tag "unread"
   "Tag to add to Org elements which have unread emails.")

@@ -4,12 +4,12 @@
 <title>ragone.io</title>
 <description>ragone.io</description>
 <link>https://ragone.io/</link>
-<lastBuildDate>Fri, 14 Jun 2019 13:29:15 +1200</lastBuildDate>
+<lastBuildDate>Fri, 14 Jun 2019 13:32:31 +1200</lastBuildDate>
 <item>
   <title>org-mu4e.el</title>
   <description><![CDATA[
 <div class="taglist">:<a href="https://ragone.io/tag-emacs.html">emacs</a>:<a href="https://ragone.io/tag-snippets.html">snippets</a>:</div></div><p>
-Tag elements if there are any unread emails in your `mu4e` inbox.
+Tag elements if there are any unread emails in your <code>mu4e</code> inbox.
 </p>
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(<span class="org-keyword">defconst</span> <span class="org-variable-name">ragone-unread-tag</span> <span class="org-string">"unread"</span>
