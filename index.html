@@ -15,8 +15,36 @@
 <body>
 <div id="preamble" class="status"><div class="header">
         <a href="https://ragone.io">Alex Ragone - All things <code>code</code></a>
-      </div></div>
+      </div>
+        <p>Find me on <a title="LinkedIn" href="https://www.linkedin.com/in/alex-ragone" target="_blank" rel="noopener">LinkedIn</a> or <a title="Github" href="https://github.com/ragone" target="_blank" rel="noopener">Github</a>!</p>
+</div>
 <div id="content">
+
+<div class="headline"> <h1 class="post-title"><a href="org-mu4e.html">org-mu4e.el</a></h1>
+<div class="taglist">:<a href="https://ragone.io/tag-emacs.html">emacs</a>:<a href="https://ragone.io/tag-snippets.html">snippets</a>:</div></div><p>
+Tag elements if there are any unread emails in your `mu4e` inbox.
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(<span class="org-keyword">defconst</span> <span class="org-variable-name">ragone-unread-tag</span> <span class="org-string">"unread"</span>
+  <span class="org-doc">"Tag to add to Org elements which have unread emails."</span><span class="org-parinfer-pretty-parensXdim-paren">)</span>
+
+(<span class="org-keyword">defun</span> <span class="org-function-name">ragone-tag-unread-elements</span> (<span class="org-parinfer-pretty-parensXdim-paren">)</span>
+  <span class="org-doc">"Update Org elements with `</span><span class="org-doc"><span class="org-constant">ragone-unread-tag</span></span><span class="org-doc">' if there are unread emails."</span>
+  (<span class="org-keyword">unless</span> (<span class="org-function-name">mu4e~proc-running-p</span><span class="org-parinfer-pretty-parensXdim-paren">)</span>
+    (<span class="org-function-name">mu4e~proc-start</span><span class="org-parinfer-pretty-parensXdim-paren">))</span>
+  (<span class="org-function-name">org-map-entries</span>
+   (<span class="org-keyword">lambda</span> (<span class="org-parinfer-pretty-parensXdim-paren">)</span>
+     (<span class="org-keyword">let*</span> ((<span class="org-function-name">search</span> (<span class="org-constant">concat</span> <span class="org-string">"flag:unread "</span> (<span class="org-constant">nth</span> <span class="org-highlight-numbers-number">4</span> (<span class="org-function-name">org-heading-components</span><span class="org-parinfer-pretty-parensXdim-paren">))))</span>
+            (code (<span class="org-keyword">with-temp-buffer</span>
+                    (<span class="org-constant">call-process</span> <span class="org-string">"mu"</span> nil (<span class="org-constant">current-buffer</span>) nil <span class="org-string">"find"</span> search<span class="org-parinfer-pretty-parensXdim-paren">))))</span>
+       (<span class="org-function-name">org-toggle-tag</span> <span class="org-variable-name">ragone-unread-tag</span> (<span class="org-keyword">if</span> (<span class="org-constant">=</span> <span class="org-highlight-numbers-number">0</span> code) <span class="org-highlight-quoted-quote">'</span><span class="org-highlight-quoted-symbol">on</span> <span class="org-highlight-quoted-quote">'</span><span class="org-highlight-quoted-symbol">off</span><span class="org-parinfer-pretty-parensXdim-paren">))))</span>
+   t
+   <span class="org-highlight-quoted-quote">'</span><span class="org-highlight-quoted-symbol">agenda</span><span class="org-parinfer-pretty-parensXdim-paren">))</span>
+
+<span class="org-comment-delimiter">;; </span><span class="org-comment">Add a hook to run before agenda displays.</span>
+(<span class="org-function-name">add-hook</span> <span class="org-highlight-quoted-quote">'</span><span class="org-variable-name">org-agenda-mode-hook</span> <span class="org-highlight-quoted-quote">#'</span><span class="org-highlight-quoted-symbol">ragone-tag-unread-elements</span><span class="org-parinfer-pretty-parensXdim-paren">)</span>
+</pre>
+</div>
 
 <div class="headline"> <h1 class="post-title"><a href="quote.html">quotes.el</a></h1>
 <div class="taglist">:<a href="https://ragone.io/tag-emacs.html">emacs</a>:<a href="https://ragone.io/tag-snippets.html">snippets</a>:</div></div><p>
@@ -78,9 +106,9 @@ see errors for the whole file but only for the added/modified lines.
 The package is published on <a href="https://melpa.org/#/magit-diff-flycheck">MELPA</a> package manager and on <a href="https://github.com/ragone/magit-diff-flycheck">GitHub</a> under license GNU GPL-3.0.
 </p>
 
-<div id="outline-container-orgb9e4d6c" class="outline-2">
-<h2 id="orgb9e4d6c">Examples</h2>
-<div class="outline-text-2" id="text-orgb9e4d6c">
+<div id="outline-container-orgdc4ffe7" class="outline-2">
+<h2 id="orgdc4ffe7">Examples</h2>
+<div class="outline-text-2" id="text-orgdc4ffe7">
 <p>
 Run <code>M-x magit-diff-flycheck</code> in a magit-diff buffer to display a filtered list
 of <a href="https://github.com/flycheck/flycheck">Flycheck</a> errors for the added/modified lines only.
@@ -163,9 +191,9 @@ Easily toggle between your notes and your working buffer.
 
 <div class="headline"> <h1 class="post-title"><a href="2019.html">2019</a></h1>
 <div class="taglist">:<a href="https://ragone.io/tag-projects.html">projects</a>:</div></div>
-<div id="outline-container-org546af35" class="outline-2">
-<h2 id="org546af35">magit-diff-flycheck&#xa0;&#xa0;&#xa0;<span class="tag"><span class="EmacsLisp">EmacsLisp</span>&#xa0;<span class="2019">2019</span></span></h2>
-<div class="outline-text-2" id="text-org546af35">
+<div id="outline-container-org2df0a31" class="outline-2">
+<h2 id="org2df0a31">magit-diff-flycheck&#xa0;&#xa0;&#xa0;<span class="tag"><span class="EmacsLisp">EmacsLisp</span>&#xa0;<span class="2019">2019</span></span></h2>
+<div class="outline-text-2" id="text-org2df0a31">
 <p>
 Interactive tool for lint output in Git diffs.
 </p>
@@ -175,9 +203,9 @@ Interactive tool for lint output in Git diffs.
 </ul>
 </div>
 </div>
-<div id="outline-container-orgf325cd9" class="outline-2">
-<h2 id="orgf325cd9">lint-emit&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Rust">Rust</span>&#xa0;<span class="2019">2019</span></span></h2>
-<div class="outline-text-2" id="text-orgf325cd9">
+<div id="outline-container-orgca5a4a6" class="outline-2">
+<h2 id="orgca5a4a6">lint-emit&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Rust">Rust</span>&#xa0;<span class="2019">2019</span></span></h2>
+<div class="outline-text-2" id="text-orgca5a4a6">
 <p>
 Command-line utility to run concurrent linters on a subset of lines.
 </p>
@@ -190,9 +218,9 @@ Command-line utility to run concurrent linters on a subset of lines.
 
 <div class="headline"> <h1 class="post-title"><a href="2018.html">2018</a></h1>
 <div class="taglist">:<a href="https://ragone.io/tag-projects.html">projects</a>:</div></div>
-<div id="outline-container-org96097a7" class="outline-2">
-<h2 id="org96097a7">QuietMind&#xa0;&#xa0;&#xa0;<span class="tag"><span class="ReactNative">ReactNative</span>&#xa0;<span class="Java">Java</span></span></h2>
-<div class="outline-text-2" id="text-org96097a7">
+<div id="outline-container-orgb08749d" class="outline-2">
+<h2 id="orgb08749d">QuietMind&#xa0;&#xa0;&#xa0;<span class="tag"><span class="ReactNative">ReactNative</span>&#xa0;<span class="Java">Java</span></span></h2>
+<div class="outline-text-2" id="text-orgb08749d">
 <p>
 A silent meditation tool for iOS and Android.
 </p>
@@ -206,9 +234,9 @@ A silent meditation tool for iOS and Android.
 
 <div class="headline"> <h1 class="post-title"><a href="2016.html">2016</a></h1>
 <div class="taglist">:<a href="https://ragone.io/tag-projects.html">projects</a>:</div></div>
-<div id="outline-container-org04f37a8" class="outline-2">
-<h2 id="org04f37a8">Emacs Config&#xa0;&#xa0;&#xa0;<span class="tag"><span class="EmacsLisp">EmacsLisp</span></span></h2>
-<div class="outline-text-2" id="text-org04f37a8">
+<div id="outline-container-orge6df380" class="outline-2">
+<h2 id="orge6df380">Emacs Config&#xa0;&#xa0;&#xa0;<span class="tag"><span class="EmacsLisp">EmacsLisp</span></span></h2>
+<div class="outline-text-2" id="text-orge6df380">
 <p>
 Personal configuration based on Doom Emacs.
 </p>

@@ -11,6 +11,19 @@
     margin-bottom: 1em
 }
 
+#archive {
+    text-align: center;
+}
+
+#archive > a {
+    color: #d14;
+}
+
+#archive > a:before, #archive > a:after {
+    content: "=";
+    color: #ccc;
+}
+
 /******************************************************
  * I copied these styles from markdotto.com, who is
  * the creator of bootstrap, and I also did some

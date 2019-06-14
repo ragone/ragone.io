@@ -1,0 +1,25 @@
+#+TITLE: org-mu4e.el
+#+DATE: <2019-06-14 Fri>
+#+FILETAGS: emacs snippets
+
+Tag elements if there are any unread emails in your `mu4e` inbox.
+#+BEGIN_SRC emacs-lisp
+(defconst ragone-unread-tag "unread"
+  "Tag to add to Org elements which have unread emails.")
+
+(defun ragone-tag-unread-elements ()
+  "Update Org elements with `ragone-unread-tag' if there are unread emails."
+  (unless (mu4e~proc-running-p)
+    (mu4e~proc-start))
+  (org-map-entries
+   (lambda ()
+     (let* ((search (concat "flag:unread " (nth 4 (org-heading-components))))
+            (code (with-temp-buffer
+                    (call-process "mu" nil (current-buffer) nil "find" search))))
+       (org-toggle-tag ragone-unread-tag (if (= 0 code) 'on 'off))))
+   t
+   'agenda))
+
+;; Add a hook to run before agenda displays.
+(add-hook 'org-agenda-mode-hook #'ragone-tag-unread-elements)
+#+END_SRC

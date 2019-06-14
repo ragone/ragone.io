@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="alternate"
+      type="application/rss+xml"
+      href="https://ragone.io/rss.xml"
+      title="RSS feed for https://ragone.io/"/>
+<title>org-mu4e.el</title>
+<meta  name="author" content="ragone" />
+      <link href= "static/style.css" rel="stylesheet" type="text/css" />
+      <link href= "static/htmlize.css" rel="stylesheet" type="text/css" />
+      <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
+      <meta name="viewport" content="initial-scale=1,width=device-width,minimum-scale=1"></head>
+<body>
+<div id="preamble" class="status">
+<div class="header">
+        <a href="https://ragone.io">Alex Ragone - All things <code>code</code></a>
+      </div>
+        <p>Find me on <a title="LinkedIn" href="https://www.linkedin.com/in/alex-ragone" target="_blank" rel="noopener">LinkedIn</a> or <a title="Github" href="https://github.com/ragone" target="_blank" rel="noopener">Github</a>!</p>
+</div>
+<div id="content">
+<div class="headline"> <h1 class="post-title"><a href="org-mu4e.html">org-mu4e.el</a></h1>
+<div class="taglist">:<a href="https://ragone.io/tag-emacs.html">emacs</a>:<a href="https://ragone.io/tag-snippets.html">snippets</a>:</div></div><p>
+Tag elements if there are any unread emails in your `mu4e` inbox.
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(<span class="org-keyword">defconst</span> <span class="org-variable-name">ragone-unread-tag</span> <span class="org-string">"unread"</span>
+  <span class="org-doc">"Tag to add to Org elements which have unread emails."</span><span class="org-parinfer-pretty-parensXdim-paren">)</span>
+
+(<span class="org-keyword">defun</span> <span class="org-function-name">ragone-tag-unread-elements</span> (<span class="org-parinfer-pretty-parensXdim-paren">)</span>
+  <span class="org-doc">"Update Org elements with `</span><span class="org-doc"><span class="org-constant">ragone-unread-tag</span></span><span class="org-doc">' if there are unread emails."</span>
+  (<span class="org-keyword">unless</span> (<span class="org-function-name">mu4e~proc-running-p</span><span class="org-parinfer-pretty-parensXdim-paren">)</span>
+    (<span class="org-function-name">mu4e~proc-start</span><span class="org-parinfer-pretty-parensXdim-paren">))</span>
+  (<span class="org-function-name">org-map-entries</span>
+   (<span class="org-keyword">lambda</span> (<span class="org-parinfer-pretty-parensXdim-paren">)</span>
+     (<span class="org-keyword">let*</span> ((<span class="org-function-name">search</span> (<span class="org-constant">concat</span> <span class="org-string">"flag:unread "</span> (<span class="org-constant">nth</span> <span class="org-highlight-numbers-number">4</span> (<span class="org-function-name">org-heading-components</span><span class="org-parinfer-pretty-parensXdim-paren">))))</span>
+            (code (<span class="org-keyword">with-temp-buffer</span>
+                    (<span class="org-constant">call-process</span> <span class="org-string">"mu"</span> nil (<span class="org-constant">current-buffer</span>) nil <span class="org-string">"find"</span> search<span class="org-parinfer-pretty-parensXdim-paren">))))</span>
+       (<span class="org-function-name">org-toggle-tag</span> <span class="org-variable-name">ragone-unread-tag</span> (<span class="org-keyword">if</span> (<span class="org-constant">=</span> <span class="org-highlight-numbers-number">0</span> code) <span class="org-highlight-quoted-quote">'</span><span class="org-highlight-quoted-symbol">on</span> <span class="org-highlight-quoted-quote">'</span><span class="org-highlight-quoted-symbol">off</span><span class="org-parinfer-pretty-parensXdim-paren">))))</span>
+   t
+   <span class="org-highlight-quoted-quote">'</span><span class="org-highlight-quoted-symbol">agenda</span><span class="org-parinfer-pretty-parensXdim-paren">))</span>
+
+<span class="org-comment-delimiter">;; </span><span class="org-comment">Add a hook to run before agenda displays.</span>
+(<span class="org-function-name">add-hook</span> <span class="org-highlight-quoted-quote">'</span><span class="org-variable-name">org-agenda-mode-hook</span> <span class="org-highlight-quoted-quote">#'</span><span class="org-highlight-quoted-symbol">ragone-tag-unread-elements</span><span class="org-parinfer-pretty-parensXdim-paren">)</span>
+</pre>
+</div>
+</div>
+<div id="postamble" class="status"><div id="archive">
+        <a href="archive.html">archive</a>
+      </div>
+      <center>
+        <p>Find me on <a title="LinkedIn" href="https://www.linkedin.com/in/alex-ragone" target="_blank" rel="noopener">LinkedIn</a> or <a title="Github" href="https://github.com/ragone" target="_blank" rel="noopener">Github</a>!</p>
+      </center></div>
+</body>
+</html>
