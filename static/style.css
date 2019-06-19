@@ -517,7 +517,21 @@ table th.right, table td.right {
   color: #839496; }
 
 .tag {
-  color: #268bd2; }
+    color: #ccc;
+    font-weight: 100;
+}
+
+.tag:before {
+    content: "(";
+}
+
+.tag:after {
+    content: ")";
+}
+
+.tag > span:after, .tag > span:before {
+    content: "\"";
+}
 
 .atn {
   color: #586175; }
