@@ -4,7 +4,7 @@
 <title>ragone.io</title>
 <description>ragone.io</description>
 <link>https://ragone.io/</link>
-<lastBuildDate>Thu, 20 Jun 2019 12:35:06 +1200</lastBuildDate>
+<lastBuildDate>Thu, 20 Jun 2019 13:43:50 +1200</lastBuildDate>
 <item>
   <title>org-mu4e.el</title>
   <description><![CDATA[
@@ -45,6 +45,13 @@ Tag elements if there are any unread emails in your <code>mu4e</code> inbox.
 My initial buffer displays a random quote from a list of programming/CS quotes.
 The complete list of quotes can be found <a href="https://ragone.io/static/quotes.txt">here</a>.
 </p>
+
+
+<figure>
+<img src="img/quote.png" alt="quote.png">
+
+</figure>
+
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(<span class="org-keyword">defvar</span> <span class="org-variable-name">ragone-quotes-file</span> <span class="org-string">"~/.doom.d/quotes.txt"</span>
   <span class="org-doc">"File to lookup quotes."</span><span class="org-parinfer-pretty-parensXdim-paren">)</span>
@@ -92,7 +99,13 @@ The complete list of quotes can be found <a href="https://ragone.io/static/quote
 <item>
   <title>magit-diff-flycheck.el</title>
   <description><![CDATA[
-<div class="taglist">:<a href="tag-projects.html">projects</a>:<a href="tag-emacs.html">emacs</a>:</div></div><p>
+<div class="taglist">:<a href="tag-projects.html">projects</a>:<a href="tag-emacs.html">emacs</a>:</div></div>
+<figure>
+<img src="img/magit-diff-flycheck.gif" alt="magit-diff-flycheck.gif">
+
+</figure>
+
+<p>
 For the past couple of months I have been working on tools which allow you
 to run linters on the added/modified lines of a Git diff. One of these tools are
 <code>magit-diff-flycheck</code>.
@@ -107,9 +120,9 @@ see errors for the whole file but only for the added/modified lines.
 The package is published on <a href="https://melpa.org/#/magit-diff-flycheck">MELPA</a> package manager and on <a href="https://github.com/ragone/magit-diff-flycheck">GitHub</a> under license GNU GPL-3.0.
 </p>
 
-<div id="outline-container-org1a74ef0" class="outline-2">
-<h2 id="org1a74ef0">Examples</h2>
-<div class="outline-text-2" id="text-org1a74ef0">
+<div id="outline-container-org63e0835" class="outline-2">
+<h2 id="org63e0835">Examples</h2>
+<div class="outline-text-2" id="text-org63e0835">
 <p>
 Run <code>M-x magit-diff-flycheck</code> in a magit-diff buffer to display a filtered list
 of <a href="https://github.com/flycheck/flycheck">Flycheck</a> errors for the added/modified lines only.
@@ -213,9 +226,9 @@ Easily toggle between your notes and your working buffer.
   <title>2019</title>
   <description><![CDATA[
 <div class="taglist">:<a href="tag-projects.html">projects</a>:</div></div>
-<div id="outline-container-org11e181a" class="outline-2">
-<h2 id="org11e181a">magit-diff-flycheck&#xa0;&#xa0;&#xa0;<span class="tag"><span class="EmacsLisp">EmacsLisp</span>&#xa0;<span class="2019">2019</span></span></h2>
-<div class="outline-text-2" id="text-org11e181a">
+<div id="outline-container-orga0b7327" class="outline-2">
+<h2 id="orga0b7327">magit-diff-flycheck&#xa0;&#xa0;&#xa0;<span class="tag"><span class="EmacsLisp">EmacsLisp</span>&#xa0;<span class="2019">2019</span></span></h2>
+<div class="outline-text-2" id="text-orga0b7327">
 <p>
 Interactive tool for lint output in Git diffs.
 </p>
@@ -225,9 +238,9 @@ Interactive tool for lint output in Git diffs.
 </ul>
 </div>
 </div>
-<div id="outline-container-org721e4d4" class="outline-2">
-<h2 id="org721e4d4">lint-emit&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Rust">Rust</span>&#xa0;<span class="2019">2019</span></span></h2>
-<div class="outline-text-2" id="text-org721e4d4">
+<div id="outline-container-org70a5286" class="outline-2">
+<h2 id="org70a5286">lint-emit&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Rust">Rust</span>&#xa0;<span class="2019">2019</span></span></h2>
+<div class="outline-text-2" id="text-org70a5286">
 <p>
 Command-line utility to run concurrent linters on a subset of lines.
 </p>
@@ -246,9 +259,9 @@ Command-line utility to run concurrent linters on a subset of lines.
   <title>2018</title>
   <description><![CDATA[
 <div class="taglist">:<a href="tag-projects.html">projects</a>:</div></div>
-<div id="outline-container-orgd34ea4c" class="outline-2">
-<h2 id="orgd34ea4c">QuietMind&#xa0;&#xa0;&#xa0;<span class="tag"><span class="ReactNative">ReactNative</span>&#xa0;<span class="Java">Java</span></span></h2>
-<div class="outline-text-2" id="text-orgd34ea4c">
+<div id="outline-container-org067d85c" class="outline-2">
+<h2 id="org067d85c">QuietMind&#xa0;&#xa0;&#xa0;<span class="tag"><span class="ReactNative">ReactNative</span>&#xa0;<span class="Java">Java</span></span></h2>
+<div class="outline-text-2" id="text-org067d85c">
 <p>
 A silent meditation tool for iOS and Android.
 </p>
@@ -268,9 +281,9 @@ A silent meditation tool for iOS and Android.
   <title>2016</title>
   <description><![CDATA[
 <div class="taglist">:<a href="tag-projects.html">projects</a>:</div></div>
-<div id="outline-container-org14ac80d" class="outline-2">
-<h2 id="org14ac80d">Emacs Config&#xa0;&#xa0;&#xa0;<span class="tag"><span class="EmacsLisp">EmacsLisp</span></span></h2>
-<div class="outline-text-2" id="text-org14ac80d">
+<div id="outline-container-orgb8e3c2a" class="outline-2">
+<h2 id="orgb8e3c2a">Emacs Config&#xa0;&#xa0;&#xa0;<span class="tag"><span class="EmacsLisp">EmacsLisp</span></span></h2>
+<div class="outline-text-2" id="text-orgb8e3c2a">
 <p>
 Personal configuration based on Doom Emacs.
 </p>

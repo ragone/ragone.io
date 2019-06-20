@@ -2,6 +2,8 @@
 #+DATE: <2019-05-24 Fri>
 #+FILETAGS: projects emacs
 
+[[file:img/magit-diff-flycheck.gif]]
+
 For the past couple of months I have been working on tools which allow you
 to run linters on the added/modified lines of a Git diff. One of these tools are
 =magit-diff-flycheck=.

@@ -4,6 +4,9 @@
 
 My initial buffer displays a random quote from a list of programming/CS quotes.
 The complete list of quotes can be found [[https://ragone.io/static/quotes.txt][here]].
+
+[[file:img/quote.png]]
+
 #+BEGIN_SRC emacs-lisp
 (defvar ragone-quotes-file "~/.doom.d/quotes.txt"
   "File to lookup quotes.")

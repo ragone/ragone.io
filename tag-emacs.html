@@ -54,6 +54,13 @@ Tag elements if there are any unread emails in your <code>mu4e</code> inbox.
 My initial buffer displays a random quote from a list of programming/CS quotes.
 The complete list of quotes can be found <a href="https://ragone.io/static/quotes.txt">here</a>.
 </p>
+
+
+<figure>
+<img src="img/quote.png" alt="quote.png">
+
+</figure>
+
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(<span class="org-keyword">defvar</span> <span class="org-variable-name">ragone-quotes-file</span> <span class="org-string">"~/.doom.d/quotes.txt"</span>
   <span class="org-doc">"File to lookup quotes."</span><span class="org-parinfer-pretty-parensXdim-paren">)</span>
@@ -94,7 +101,13 @@ The complete list of quotes can be found <a href="https://ragone.io/static/quote
 </div>
 
 <div class="headline"> <h1 class="post-title"><a href="magit-diff-flycheck.html">magit-diff-flycheck.el</a></h1>
-<div class="taglist">:<a href="tag-projects.html">projects</a>:<a href="tag-emacs.html">emacs</a>:</div></div><p>
+<div class="taglist">:<a href="tag-projects.html">projects</a>:<a href="tag-emacs.html">emacs</a>:</div></div>
+<figure>
+<img src="img/magit-diff-flycheck.gif" alt="magit-diff-flycheck.gif">
+
+</figure>
+
+<p>
 For the past couple of months I have been working on tools which allow you
 to run linters on the added/modified lines of a Git diff. One of these tools are
 <code>magit-diff-flycheck</code>.
@@ -109,9 +122,9 @@ see errors for the whole file but only for the added/modified lines.
 The package is published on <a href="https://melpa.org/#/magit-diff-flycheck">MELPA</a> package manager and on <a href="https://github.com/ragone/magit-diff-flycheck">GitHub</a> under license GNU GPL-3.0.
 </p>
 
-<div id="outline-container-org1a74ef0" class="outline-2">
-<h2 id="org1a74ef0">Examples</h2>
-<div class="outline-text-2" id="text-org1a74ef0">
+<div id="outline-container-org63e0835" class="outline-2">
+<h2 id="org63e0835">Examples</h2>
+<div class="outline-text-2" id="text-org63e0835">
 <p>
 Run <code>M-x magit-diff-flycheck</code> in a magit-diff buffer to display a filtered list
 of <a href="https://github.com/flycheck/flycheck">Flycheck</a> errors for the added/modified lines only.
