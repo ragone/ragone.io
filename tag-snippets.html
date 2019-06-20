@@ -13,13 +13,18 @@
       <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
       <meta name="viewport" content="initial-scale=1,width=device-width,minimum-scale=1"></head>
 <body>
-<div id="preamble" class="status"><div class="header">
-        <a href="https://ragone.io">Alex Ragone</a> - Find me on <a title="LinkedIn" href="https://www.linkedin.com/in/alex-ragone" target="_blank" rel="noopener">LinkedIn</a> or <a title="Github" href="https://github.com/ragone" target="_blank" rel="noopener">Github</a>!
-      </div></div>
+<div id="preamble" class="status"><header>
+        <a href="index.html"><code>Alex Ragone</code></a>
+        <nav>
+          <a title="Projects" href="tag-projects.html">Projects</a>
+          <a title="LinkedIn" href="https://www.linkedin.com/in/alex-ragone" target="_blank" rel="noopener">LinkedIn</a>
+          <a title="Github" href="https://github.com/ragone" target="_blank" rel="noopener">Github</a>
+        </nav>
+      </header></div>
 <div id="content">
 <h1 class="title">Posts tagged "snippets":</h1>
 <div class="headline"> <h1 class="post-title"><a href="org-mu4e.html">org-mu4e.el</a></h1>
-<div class="taglist">:<a href="https://ragone.io/tag-emacs.html">emacs</a>:<a href="https://ragone.io/tag-snippets.html">snippets</a>:</div></div><p>
+<div class="taglist">:<a href="tag-emacs.html">emacs</a>:<a href="tag-snippets.html">snippets</a>:</div></div><p>
 Tag elements if there are any unread emails in your <code>mu4e</code> inbox.
 </p>
 <div class="org-src-container">
@@ -35,7 +40,7 @@ Tag elements if there are any unread emails in your <code>mu4e</code> inbox.
      (<span class="org-keyword">let*</span> ((<span class="org-function-name">search</span> (<span class="org-constant">concat</span> <span class="org-string">"flag:unread "</span> (<span class="org-constant">nth</span> <span class="org-highlight-numbers-number">4</span> (<span class="org-function-name">org-heading-components</span><span class="org-parinfer-pretty-parensXdim-paren">))))</span>
             (code (<span class="org-keyword">with-temp-buffer</span>
                     (<span class="org-constant">call-process</span> <span class="org-string">"mu"</span> nil (<span class="org-constant">current-buffer</span>) nil <span class="org-string">"find"</span> search<span class="org-parinfer-pretty-parensXdim-paren">))))</span>
-       (<span class="org-function-name">org-toggle-tag</span> <span class="org-variable-name">ragone-unread-tag</span> (<span class="org-keyword">if</span> (<span class="org-constant">=</span> <span class="org-highlight-numbers-number">0</span> code) <span class="org-highlight-quoted-quote">'</span><span class="org-highlight-quoted-symbol">on</span> <span class="org-highlight-quoted-quote">'</span><span class="org-highlight-quoted-symbol">off</span><span class="org-parinfer-pretty-parensXdim-paren">))))</span>
+       (<span class="org-function-name">org-toggle-tag</span> ragone-unread-tag (<span class="org-keyword">if</span> (<span class="org-constant">=</span> <span class="org-highlight-numbers-number">0</span> code) <span class="org-highlight-quoted-quote">'</span><span class="org-highlight-quoted-symbol">on</span> <span class="org-highlight-quoted-quote">'</span><span class="org-highlight-quoted-symbol">off</span><span class="org-parinfer-pretty-parensXdim-paren">))))</span>
    t
    <span class="org-highlight-quoted-quote">'</span><span class="org-highlight-quoted-symbol">agenda</span><span class="org-parinfer-pretty-parensXdim-paren">))</span>
 
@@ -45,7 +50,7 @@ Tag elements if there are any unread emails in your <code>mu4e</code> inbox.
 </div>
 
 <div class="headline"> <h1 class="post-title"><a href="quote.html">quotes.el</a></h1>
-<div class="taglist">:<a href="https://ragone.io/tag-emacs.html">emacs</a>:<a href="https://ragone.io/tag-snippets.html">snippets</a>:</div></div><p>
+<div class="taglist">:<a href="tag-emacs.html">emacs</a>:<a href="tag-snippets.html">snippets</a>:</div></div><p>
 My initial buffer displays a random quote from a list of programming/CS quotes.
 The complete list of quotes can be found <a href="https://ragone.io/static/quotes.txt">here</a>.
 </p>
@@ -89,7 +94,7 @@ The complete list of quotes can be found <a href="https://ragone.io/static/quote
 </div>
 
 <div class="headline"> <h1 class="post-title"><a href="htmlize.html">htmlize.el</a></h1>
-<div class="taglist">:<a href="https://ragone.io/tag-emacs.html">emacs</a>:<a href="https://ragone.io/tag-snippets.html">snippets</a>:</div></div><p>
+<div class="taglist">:<a href="tag-emacs.html">emacs</a>:<a href="tag-snippets.html">snippets</a>:</div></div><p>
 Quickly copy an image of a htmlized buffer or region to the clipboard.
 </p>
 <div class="org-src-container">
@@ -119,7 +124,7 @@ Quickly copy an image of a htmlized buffer or region to the clipboard.
 </div>
 
 <div class="headline"> <h1 class="post-title"><a href="deft-or-close.html">deft-or-close.el</a></h1>
-<div class="taglist">:<a href="https://ragone.io/tag-emacs.html">emacs</a>:<a href="https://ragone.io/tag-snippets.html">snippets</a>:</div></div><p>
+<div class="taglist">:<a href="tag-emacs.html">emacs</a>:<a href="tag-snippets.html">snippets</a>:</div></div><p>
 Easily toggle between your notes and your working buffer.
 </p>
 <div class="org-src-container">

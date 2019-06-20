@@ -13,13 +13,18 @@
       <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
       <meta name="viewport" content="initial-scale=1,width=device-width,minimum-scale=1"></head>
 <body>
-<div id="preamble" class="status"><div class="header">
-        <a href="https://ragone.io">Alex Ragone</a> - Find me on <a title="LinkedIn" href="https://www.linkedin.com/in/alex-ragone" target="_blank" rel="noopener">LinkedIn</a> or <a title="Github" href="https://github.com/ragone" target="_blank" rel="noopener">Github</a>!
-      </div></div>
+<div id="preamble" class="status"><header>
+        <a href="index.html"><code>Alex Ragone</code></a>
+        <nav>
+          <a title="Projects" href="tag-projects.html">Projects</a>
+          <a title="LinkedIn" href="https://www.linkedin.com/in/alex-ragone" target="_blank" rel="noopener">LinkedIn</a>
+          <a title="Github" href="https://github.com/ragone" target="_blank" rel="noopener">Github</a>
+        </nav>
+      </header></div>
 <div id="content">
 
 <div class="headline"> <h1 class="post-title"><a href="org-mu4e.html">org-mu4e.el</a></h1>
-<div class="taglist">:<a href="https://ragone.io/tag-emacs.html">emacs</a>:<a href="https://ragone.io/tag-snippets.html">snippets</a>:</div></div><p>
+<div class="taglist">:<a href="tag-emacs.html">emacs</a>:<a href="tag-snippets.html">snippets</a>:</div></div><p>
 Tag elements if there are any unread emails in your <code>mu4e</code> inbox.
 </p>
 <div class="org-src-container">
@@ -35,7 +40,7 @@ Tag elements if there are any unread emails in your <code>mu4e</code> inbox.
      (<span class="org-keyword">let*</span> ((<span class="org-function-name">search</span> (<span class="org-constant">concat</span> <span class="org-string">"flag:unread "</span> (<span class="org-constant">nth</span> <span class="org-highlight-numbers-number">4</span> (<span class="org-function-name">org-heading-components</span><span class="org-parinfer-pretty-parensXdim-paren">))))</span>
             (code (<span class="org-keyword">with-temp-buffer</span>
                     (<span class="org-constant">call-process</span> <span class="org-string">"mu"</span> nil (<span class="org-constant">current-buffer</span>) nil <span class="org-string">"find"</span> search<span class="org-parinfer-pretty-parensXdim-paren">))))</span>
-       (<span class="org-function-name">org-toggle-tag</span> <span class="org-variable-name">ragone-unread-tag</span> (<span class="org-keyword">if</span> (<span class="org-constant">=</span> <span class="org-highlight-numbers-number">0</span> code) <span class="org-highlight-quoted-quote">'</span><span class="org-highlight-quoted-symbol">on</span> <span class="org-highlight-quoted-quote">'</span><span class="org-highlight-quoted-symbol">off</span><span class="org-parinfer-pretty-parensXdim-paren">))))</span>
+       (<span class="org-function-name">org-toggle-tag</span> ragone-unread-tag (<span class="org-keyword">if</span> (<span class="org-constant">=</span> <span class="org-highlight-numbers-number">0</span> code) <span class="org-highlight-quoted-quote">'</span><span class="org-highlight-quoted-symbol">on</span> <span class="org-highlight-quoted-quote">'</span><span class="org-highlight-quoted-symbol">off</span><span class="org-parinfer-pretty-parensXdim-paren">))))</span>
    t
    <span class="org-highlight-quoted-quote">'</span><span class="org-highlight-quoted-symbol">agenda</span><span class="org-parinfer-pretty-parensXdim-paren">))</span>
 
@@ -45,7 +50,7 @@ Tag elements if there are any unread emails in your <code>mu4e</code> inbox.
 </div>
 
 <div class="headline"> <h1 class="post-title"><a href="quote.html">quotes.el</a></h1>
-<div class="taglist">:<a href="https://ragone.io/tag-emacs.html">emacs</a>:<a href="https://ragone.io/tag-snippets.html">snippets</a>:</div></div><p>
+<div class="taglist">:<a href="tag-emacs.html">emacs</a>:<a href="tag-snippets.html">snippets</a>:</div></div><p>
 My initial buffer displays a random quote from a list of programming/CS quotes.
 The complete list of quotes can be found <a href="https://ragone.io/static/quotes.txt">here</a>.
 </p>
@@ -89,8 +94,8 @@ The complete list of quotes can be found <a href="https://ragone.io/static/quote
 </div>
 
 <div class="headline"> <h1 class="post-title"><a href="magit-diff-flycheck.html">magit-diff-flycheck.el</a></h1>
-<div class="taglist">:<a href="https://ragone.io/tag-projects.html">projects</a>:<a href="https://ragone.io/tag-emacs.html">emacs</a>:</div></div><p>
-For the past couple of month I have been working on tools which allows you
+<div class="taglist">:<a href="tag-projects.html">projects</a>:<a href="tag-emacs.html">emacs</a>:</div></div><p>
+For the past couple of months I have been working on tools which allow you
 to run linters on the added/modified lines of a Git diff. One of these tools are
 <code>magit-diff-flycheck</code>.
 </p>
@@ -104,9 +109,9 @@ see errors for the whole file but only for the added/modified lines.
 The package is published on <a href="https://melpa.org/#/magit-diff-flycheck">MELPA</a> package manager and on <a href="https://github.com/ragone/magit-diff-flycheck">GitHub</a> under license GNU GPL-3.0.
 </p>
 
-<div id="outline-container-org2058178" class="outline-2">
-<h2 id="org2058178">Examples</h2>
-<div class="outline-text-2" id="text-org2058178">
+<div id="outline-container-org1a74ef0" class="outline-2">
+<h2 id="org1a74ef0">Examples</h2>
+<div class="outline-text-2" id="text-org1a74ef0">
 <p>
 Run <code>M-x magit-diff-flycheck</code> in a magit-diff buffer to display a filtered list
 of <a href="https://github.com/flycheck/flycheck">Flycheck</a> errors for the added/modified lines only.
@@ -132,7 +137,7 @@ C-u M-x magit-diff-flycheck
 </div>
 
 <div class="headline"> <h1 class="post-title"><a href="htmlize.html">htmlize.el</a></h1>
-<div class="taglist">:<a href="https://ragone.io/tag-emacs.html">emacs</a>:<a href="https://ragone.io/tag-snippets.html">snippets</a>:</div></div><p>
+<div class="taglist">:<a href="tag-emacs.html">emacs</a>:<a href="tag-snippets.html">snippets</a>:</div></div><p>
 Quickly copy an image of a htmlized buffer or region to the clipboard.
 </p>
 <div class="org-src-container">
@@ -162,7 +167,7 @@ Quickly copy an image of a htmlized buffer or region to the clipboard.
 </div>
 
 <div class="headline"> <h1 class="post-title"><a href="deft-or-close.html">deft-or-close.el</a></h1>
-<div class="taglist">:<a href="https://ragone.io/tag-emacs.html">emacs</a>:<a href="https://ragone.io/tag-snippets.html">snippets</a>:</div></div><p>
+<div class="taglist">:<a href="tag-emacs.html">emacs</a>:<a href="tag-snippets.html">snippets</a>:</div></div><p>
 Easily toggle between your notes and your working buffer.
 </p>
 <div class="org-src-container">
@@ -188,10 +193,10 @@ Easily toggle between your notes and your working buffer.
 </div>
 
 <div class="headline"> <h1 class="post-title"><a href="2019.html">2019</a></h1>
-<div class="taglist">:<a href="https://ragone.io/tag-projects.html">projects</a>:</div></div>
-<div id="outline-container-org3e8a475" class="outline-2">
-<h2 id="org3e8a475">magit-diff-flycheck&#xa0;&#xa0;&#xa0;<span class="tag"><span class="EmacsLisp">EmacsLisp</span>&#xa0;<span class="2019">2019</span></span></h2>
-<div class="outline-text-2" id="text-org3e8a475">
+<div class="taglist">:<a href="tag-projects.html">projects</a>:</div></div>
+<div id="outline-container-org11e181a" class="outline-2">
+<h2 id="org11e181a">magit-diff-flycheck&#xa0;&#xa0;&#xa0;<span class="tag"><span class="EmacsLisp">EmacsLisp</span>&#xa0;<span class="2019">2019</span></span></h2>
+<div class="outline-text-2" id="text-org11e181a">
 <p>
 Interactive tool for lint output in Git diffs.
 </p>
@@ -201,9 +206,9 @@ Interactive tool for lint output in Git diffs.
 </ul>
 </div>
 </div>
-<div id="outline-container-org7534725" class="outline-2">
-<h2 id="org7534725">lint-emit&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Rust">Rust</span>&#xa0;<span class="2019">2019</span></span></h2>
-<div class="outline-text-2" id="text-org7534725">
+<div id="outline-container-org721e4d4" class="outline-2">
+<h2 id="org721e4d4">lint-emit&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Rust">Rust</span>&#xa0;<span class="2019">2019</span></span></h2>
+<div class="outline-text-2" id="text-org721e4d4">
 <p>
 Command-line utility to run concurrent linters on a subset of lines.
 </p>
@@ -215,10 +220,10 @@ Command-line utility to run concurrent linters on a subset of lines.
 </div>
 
 <div class="headline"> <h1 class="post-title"><a href="2018.html">2018</a></h1>
-<div class="taglist">:<a href="https://ragone.io/tag-projects.html">projects</a>:</div></div>
-<div id="outline-container-org50de173" class="outline-2">
-<h2 id="org50de173">QuietMind&#xa0;&#xa0;&#xa0;<span class="tag"><span class="ReactNative">ReactNative</span>&#xa0;<span class="Java">Java</span></span></h2>
-<div class="outline-text-2" id="text-org50de173">
+<div class="taglist">:<a href="tag-projects.html">projects</a>:</div></div>
+<div id="outline-container-orgd34ea4c" class="outline-2">
+<h2 id="orgd34ea4c">QuietMind&#xa0;&#xa0;&#xa0;<span class="tag"><span class="ReactNative">ReactNative</span>&#xa0;<span class="Java">Java</span></span></h2>
+<div class="outline-text-2" id="text-orgd34ea4c">
 <p>
 A silent meditation tool for iOS and Android.
 </p>
@@ -231,10 +236,10 @@ A silent meditation tool for iOS and Android.
 </div>
 
 <div class="headline"> <h1 class="post-title"><a href="2016.html">2016</a></h1>
-<div class="taglist">:<a href="https://ragone.io/tag-projects.html">projects</a>:</div></div>
-<div id="outline-container-org9f973c6" class="outline-2">
-<h2 id="org9f973c6">Emacs Config&#xa0;&#xa0;&#xa0;<span class="tag"><span class="EmacsLisp">EmacsLisp</span></span></h2>
-<div class="outline-text-2" id="text-org9f973c6">
+<div class="taglist">:<a href="tag-projects.html">projects</a>:</div></div>
+<div id="outline-container-org14ac80d" class="outline-2">
+<h2 id="org14ac80d">Emacs Config&#xa0;&#xa0;&#xa0;<span class="tag"><span class="EmacsLisp">EmacsLisp</span></span></h2>
+<div class="outline-text-2" id="text-org14ac80d">
 <p>
 Personal configuration based on Doom Emacs.
 </p>

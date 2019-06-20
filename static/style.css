@@ -5,11 +5,6 @@
     position: relative;
     margin: 5px auto;
 }
-#header {
-    float: right;
-    margin-left: 1em;
-    margin-bottom: 1em
-}
 
 #archive {
     text-align: center;
@@ -22,6 +17,16 @@
 #archive > a:before, #archive > a:after {
     content: "=";
     color: #ccc;
+}
+
+nav {
+    color: #ccc;
+    display: inline-table;
+    font-weight: 100;
+}
+
+nav > a + a {
+    margin-left: 0.5em;
 }
 
 /******************************************************
@@ -521,16 +526,17 @@ table th.right, table td.right {
     font-weight: 100;
 }
 
-.tag:before {
+.tag:before, nav:before {
     content: "(";
 }
 
-.tag:after {
+.tag:after, nav:after {
     content: ")";
 }
 
-.tag > span:after, .tag > span:before {
+.tag > span:after, .tag > span:before, nav > a:after, nav > a:before {
     content: "\"";
+    color: #ccc;
 }
 
 .atn {
