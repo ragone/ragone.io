@@ -91,9 +91,13 @@ p {
     flex-grow: 1;
 }
 
+.post-date {
+    color: #ccc;
+}
+
 h1 {
     position: relative;
-    margin: 30px 0 10px;
+    margin: 30px 0 0;
     font-size: 22px;
     font-weight: bold;
     line-height: 1.1;
@@ -174,10 +178,11 @@ pre {
     border-radius: 3px 3px 3px 3px;
     line-height: 28px;
     background-color: #f5f5f5;
-    white-space: pre;
-    white-space: pre-wrap;
+    /* white-space: pre; */
+    /* white-space: pre-wrap; */
     word-break: break-all;
     word-wrap: break-word;
+    overflow: scroll;
 }
 blockquote {
     padding: 0 0 0 20px;

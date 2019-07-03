@@ -4,11 +4,11 @@
 <title>ragone.io</title>
 <description>ragone.io</description>
 <link>https://ragone.io/</link>
-<lastBuildDate>Thu, 20 Jun 2019 13:43:50 +1200</lastBuildDate>
+<lastBuildDate>Wed, 03 Jul 2019 21:54:46 +0800</lastBuildDate>
 <item>
   <title>org-mu4e.el</title>
   <description><![CDATA[
-<div class="taglist">:<a href="tag-emacs.html">emacs</a>:<a href="tag-snippets.html">snippets</a>:</div></div><p>
+<div class="taglist">:<a href="tag-emacs.html">emacs</a>:<a href="tag-snippets.html">snippets</a>:</div></div><div class="post-date"><2019-06-14 Fri></div><p>
 Tag elements if there are any unread emails in your <code>mu4e</code> inbox.
 </p>
 <div class="org-src-container">
@@ -17,8 +17,8 @@ Tag elements if there are any unread emails in your <code>mu4e</code> inbox.
 
 (<span class="org-keyword">defun</span> <span class="org-function-name">ragone-tag-unread-elements</span> (<span class="org-parinfer-pretty-parensXdim-paren">)</span>
   <span class="org-doc">"Update Org elements with `</span><span class="org-doc"><span class="org-constant">ragone-unread-tag</span></span><span class="org-doc">' if there are unread emails."</span>
-  (<span class="org-keyword">unless</span> (<span class="org-function-name">mu4e~proc-running-p</span><span class="org-parinfer-pretty-parensXdim-paren">)</span>
-    (<span class="org-function-name">mu4e~proc-start</span><span class="org-parinfer-pretty-parensXdim-paren">))</span>
+  (<span class="org-keyword">unless</span> (mu4e~proc-running-p<span class="org-parinfer-pretty-parensXdim-paren">)</span>
+    (mu4e~proc-start<span class="org-parinfer-pretty-parensXdim-paren">))</span>
   (<span class="org-function-name">org-map-entries</span>
    (<span class="org-keyword">lambda</span> (<span class="org-parinfer-pretty-parensXdim-paren">)</span>
      (<span class="org-keyword">let*</span> ((<span class="org-function-name">search</span> (<span class="org-constant">concat</span> <span class="org-string">"flag:unread "</span> (<span class="org-constant">nth</span> <span class="org-highlight-numbers-number">4</span> (<span class="org-function-name">org-heading-components</span><span class="org-parinfer-pretty-parensXdim-paren">))))</span>
@@ -36,12 +36,12 @@ Tag elements if there are any unread emails in your <code>mu4e</code> inbox.
   <category>emacs</category>
   <category>snippets</category>
   <link>https://ragone.io/org-mu4e.html</link>
-  <pubDate>Fri, 14 Jun 2019 12:00:00 +1200</pubDate>
+  <pubDate>Fri, 14 Jun 2019 08:00:00 +0800</pubDate>
 </item>
 <item>
   <title>quotes.el</title>
   <description><![CDATA[
-<div class="taglist">:<a href="tag-emacs.html">emacs</a>:<a href="tag-snippets.html">snippets</a>:</div></div><p>
+<div class="taglist">:<a href="tag-emacs.html">emacs</a>:<a href="tag-snippets.html">snippets</a>:</div></div><div class="post-date"><2019-05-26 Sun></div><p>
 My initial buffer displays a random quote from a list of programming/CS quotes.
 The complete list of quotes can be found <a href="https://ragone.io/static/quotes.txt">here</a>.
 </p>
@@ -94,12 +94,12 @@ The complete list of quotes can be found <a href="https://ragone.io/static/quote
   <category>emacs</category>
   <category>snippets</category>
   <link>https://ragone.io/quote.html</link>
-  <pubDate>Sun, 26 May 2019 12:00:00 +1200</pubDate>
+  <pubDate>Sun, 26 May 2019 08:00:00 +0800</pubDate>
 </item>
 <item>
   <title>magit-diff-flycheck.el</title>
   <description><![CDATA[
-<div class="taglist">:<a href="tag-projects.html">projects</a>:<a href="tag-emacs.html">emacs</a>:</div></div>
+<div class="taglist">:<a href="tag-projects.html">projects</a>:<a href="tag-emacs.html">emacs</a>:</div></div><div class="post-date"><2019-05-24 Fri></div>
 <figure>
 <img src="img/magit-diff-flycheck.gif" alt="magit-diff-flycheck.gif">
 
@@ -120,9 +120,9 @@ see errors for the whole file but only for the added/modified lines.
 The package is published on <a href="https://melpa.org/#/magit-diff-flycheck">MELPA</a> package manager and on <a href="https://github.com/ragone/magit-diff-flycheck">GitHub</a> under license GNU GPL-3.0.
 </p>
 
-<div id="outline-container-org63e0835" class="outline-2">
-<h2 id="org63e0835">Examples</h2>
-<div class="outline-text-2" id="text-org63e0835">
+<div id="outline-container-org5358a7a" class="outline-2">
+<h2 id="org5358a7a">Examples</h2>
+<div class="outline-text-2" id="text-org5358a7a">
 <p>
 Run <code>M-x magit-diff-flycheck</code> in a magit-diff buffer to display a filtered list
 of <a href="https://github.com/flycheck/flycheck">Flycheck</a> errors for the added/modified lines only.
@@ -150,12 +150,12 @@ C-u M-x magit-diff-flycheck
   <category>projects</category>
   <category>emacs</category>
   <link>https://ragone.io/magit-diff-flycheck.html</link>
-  <pubDate>Fri, 24 May 2019 12:00:00 +1200</pubDate>
+  <pubDate>Fri, 24 May 2019 08:00:00 +0800</pubDate>
 </item>
 <item>
   <title>htmlize.el</title>
   <description><![CDATA[
-<div class="taglist">:<a href="tag-emacs.html">emacs</a>:<a href="tag-snippets.html">snippets</a>:</div></div><p>
+<div class="taglist">:<a href="tag-emacs.html">emacs</a>:<a href="tag-snippets.html">snippets</a>:</div></div><div class="post-date"><2019-05-23 Thu></div><p>
 Quickly copy an image of a htmlized buffer or region to the clipboard.
 </p>
 <div class="org-src-container">
@@ -187,12 +187,12 @@ Quickly copy an image of a htmlized buffer or region to the clipboard.
   <category>emacs</category>
   <category>snippets</category>
   <link>https://ragone.io/htmlize.html</link>
-  <pubDate>Thu, 23 May 2019 12:00:00 +1200</pubDate>
+  <pubDate>Thu, 23 May 2019 08:00:00 +0800</pubDate>
 </item>
 <item>
   <title>deft-or-close.el</title>
   <description><![CDATA[
-<div class="taglist">:<a href="tag-emacs.html">emacs</a>:<a href="tag-snippets.html">snippets</a>:</div></div><p>
+<div class="taglist">:<a href="tag-emacs.html">emacs</a>:<a href="tag-snippets.html">snippets</a>:</div></div><div class="post-date"><2019-05-11 Sat></div><p>
 Easily toggle between your notes and your working buffer.
 </p>
 <div class="org-src-container">
@@ -220,15 +220,15 @@ Easily toggle between your notes and your working buffer.
   <category>emacs</category>
   <category>snippets</category>
   <link>https://ragone.io/deft-or-close.html</link>
-  <pubDate>Sat, 11 May 2019 12:00:00 +1200</pubDate>
+  <pubDate>Sat, 11 May 2019 08:00:00 +0800</pubDate>
 </item>
 <item>
   <title>2019</title>
   <description><![CDATA[
-<div class="taglist">:<a href="tag-projects.html">projects</a>:</div></div>
-<div id="outline-container-orga0b7327" class="outline-2">
-<h2 id="orga0b7327">magit-diff-flycheck&#xa0;&#xa0;&#xa0;<span class="tag"><span class="EmacsLisp">EmacsLisp</span>&#xa0;<span class="2019">2019</span></span></h2>
-<div class="outline-text-2" id="text-orga0b7327">
+<div class="taglist">:<a href="tag-projects.html">projects</a>:</div></div><div class="post-date"><2019-01-01 Tue></div>
+<div id="outline-container-org8aff021" class="outline-2">
+<h2 id="org8aff021">magit-diff-flycheck&#xa0;&#xa0;&#xa0;<span class="tag"><span class="EmacsLisp">EmacsLisp</span>&#xa0;<span class="2019">2019</span></span></h2>
+<div class="outline-text-2" id="text-org8aff021">
 <p>
 Interactive tool for lint output in Git diffs.
 </p>
@@ -238,9 +238,9 @@ Interactive tool for lint output in Git diffs.
 </ul>
 </div>
 </div>
-<div id="outline-container-org70a5286" class="outline-2">
-<h2 id="org70a5286">lint-emit&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Rust">Rust</span>&#xa0;<span class="2019">2019</span></span></h2>
-<div class="outline-text-2" id="text-org70a5286">
+<div id="outline-container-org4634a92" class="outline-2">
+<h2 id="org4634a92">lint-emit&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Rust">Rust</span>&#xa0;<span class="2019">2019</span></span></h2>
+<div class="outline-text-2" id="text-org4634a92">
 <p>
 Command-line utility to run concurrent linters on a subset of lines.
 </p>
@@ -253,15 +253,15 @@ Command-line utility to run concurrent linters on a subset of lines.
 ]]></description>
   <category>projects</category>
   <link>https://ragone.io/2019.html</link>
-  <pubDate>Tue, 01 Jan 2019 13:00:00 +1300</pubDate>
+  <pubDate>Tue, 01 Jan 2019 08:00:00 +0800</pubDate>
 </item>
 <item>
   <title>2018</title>
   <description><![CDATA[
-<div class="taglist">:<a href="tag-projects.html">projects</a>:</div></div>
-<div id="outline-container-org067d85c" class="outline-2">
-<h2 id="org067d85c">QuietMind&#xa0;&#xa0;&#xa0;<span class="tag"><span class="ReactNative">ReactNative</span>&#xa0;<span class="Java">Java</span></span></h2>
-<div class="outline-text-2" id="text-org067d85c">
+<div class="taglist">:<a href="tag-projects.html">projects</a>:</div></div><div class="post-date"><2018-01-01 Mon></div>
+<div id="outline-container-org51a648d" class="outline-2">
+<h2 id="org51a648d">QuietMind&#xa0;&#xa0;&#xa0;<span class="tag"><span class="ReactNative">ReactNative</span>&#xa0;<span class="Java">Java</span></span></h2>
+<div class="outline-text-2" id="text-org51a648d">
 <p>
 A silent meditation tool for iOS and Android.
 </p>
@@ -275,15 +275,15 @@ A silent meditation tool for iOS and Android.
 ]]></description>
   <category>projects</category>
   <link>https://ragone.io/2018.html</link>
-  <pubDate>Mon, 01 Jan 2018 13:00:00 +1300</pubDate>
+  <pubDate>Mon, 01 Jan 2018 08:00:00 +0800</pubDate>
 </item>
 <item>
   <title>2016</title>
   <description><![CDATA[
-<div class="taglist">:<a href="tag-projects.html">projects</a>:</div></div>
-<div id="outline-container-orgb8e3c2a" class="outline-2">
-<h2 id="orgb8e3c2a">Emacs Config&#xa0;&#xa0;&#xa0;<span class="tag"><span class="EmacsLisp">EmacsLisp</span></span></h2>
-<div class="outline-text-2" id="text-orgb8e3c2a">
+<div class="taglist">:<a href="tag-projects.html">projects</a>:</div></div><div class="post-date"><2016-01-01 Fri></div>
+<div id="outline-container-org5c80b38" class="outline-2">
+<h2 id="org5c80b38">Emacs Config&#xa0;&#xa0;&#xa0;<span class="tag"><span class="EmacsLisp">EmacsLisp</span></span></h2>
+<div class="outline-text-2" id="text-org5c80b38">
 <p>
 Personal configuration based on Doom Emacs.
 </p>
@@ -295,7 +295,7 @@ Personal configuration based on Doom Emacs.
 ]]></description>
   <category>projects</category>
   <link>https://ragone.io/2016.html</link>
-  <pubDate>Fri, 01 Jan 2016 13:00:00 +1300</pubDate>
+  <pubDate>Fri, 01 Jan 2016 08:00:00 +0800</pubDate>
 </item>
 </channel>
 </rss>
